@@ -1,0 +1,34 @@
+.dashboard_module {
+	float: left;
+	margin: 0 10px 20px 0;
+	width: 450px;
+}
+	.dashboard_module h2 {
+		background: #ccc;
+		color: #000;
+		font-size: 1.2em;
+		font-weight: normal;
+		margin: 0;
+		padding: 5px;
+	}
+	.dashboard_module p {
+		margin: 5px;
+	}
+	.dashboard_module ul, .dashboard_module ul li{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+		.dashboard_module ul li {
+			padding: 5px;
+			border-bottom: 1px solid #ddd;
+		}
+		.dashboard_module ul li.alternate {
+			color: #666;
+		}
+			.dashboard_module ul li.alternate a {
+				color: #555;
+			}
+		.dashboard_module ul li span {
+			display: block;
+		}
