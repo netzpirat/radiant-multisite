@@ -1,0 +1,3 @@
+[submodule "vendor/extensions/ray"]
+	path = vendor/extensions/ray
+	url = git@github.com:netzpirat/radiant-ray-extension.git
