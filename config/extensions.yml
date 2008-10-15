@@ -4,7 +4,7 @@
   fork: saturnflyer/radiant-admin_breadcrumbs-extension
 - name: blog
   hub: netzpiraten
-  fork: seancribbs/radiant-blog-extension
+  fork: saturnflyer/radiant-blog-extension
 - name: comments
   hub: netzpiraten
   fork: ntalbott/radiant-comments 
