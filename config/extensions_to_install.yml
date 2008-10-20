@@ -4,7 +4,9 @@
 - name: comments
   hub: netzpirat
   remote: ntalbott/radiant-comments 
-
+- name: rbac
+  hub: netzpirat
+  remote: saturnflyer/radiant-rbac-base-extension
 
 - name: paperclipped
   hub: netzpirat
@@ -21,6 +23,4 @@
   hub: netzpirat
   remote: radiant-upload-manager-extension
 
-- name: rbac
-  hub: netzpirat
-  remote: saturnflyer/radiant-rbac-base-extension
+
