@@ -1,68 +1,68 @@
 ---
 - name: admin-breadcrumbs
   hub: netzpiraten
-  fork: saturnflyer/radiant-admin_breadcrumbs-extension
+  remote: saturnflyer/radiant-admin_breadcrumbs-extension
 - name: blog
   hub: netzpiraten
-  fork: saturnflyer/radiant-blog-extension
+  remote: saturnflyer/radiant-blog-extension
 - name: comments
   hub: netzpiraten
-  fork: ntalbott/radiant-comments 
+  remote: ntalbott/radiant-comments 
 - name: copy-move
   hub: netzpiraten
-  fork: pilu/radiant-copy-move
+  remote: pilu/radiant-copy-move
 - name: dashboard
   hub: netzpiraten
-  fork: saturnflyer/radiant-dashboard-extension
+  remote: saturnflyer/radiant-dashboard-extension
 - name: gallery
   hub: netzpiraten
-  fork: pilu/radiant-gallery 
+  remote: pilu/radiant-gallery 
 - name: import-export
   hub: netzpiraten
-  fork: radiant/radiant-import-export-extension
+  remote: radiant/radiant-import-export-extension
 - name: iphone
   hub: netzpiraten
-  fork: pilu/radiant-iphone-extension
+  remote: pilu/radiant-iphone-extension
 - name: multi-site
   hub: netzpiraten
-  fork: radiant/radiant-multi-site-extension
+  remote: radiant/radiant-multi-site-extension
 - name: navigation-tags
   hub: netzpiraten
-  fork: derencius/navigation_tags
+  remote: derencius/navigation_tags
 - name: page-list-view
   hub: netzpiraten
-  fork: avonderluft/radiant-page_list_view-extension
+  remote: avonderluft/radiant-page_list_view-extension
 - name: page-preview
   hub: netzpiraten
-  fork: vigetlabs/radiant_page_preview_extension
+  remote: vigetlabs/radiant_page_preview_extension
 - name: paperclipped
   hub: netzpiraten
   rake: assets
-  fork: kbingman/paperclipped
+  remote: kbingman/paperclipped
 - name: paperclipped-multisite
   hub: netzpiraten
-  fork: kbingman/radiant-paperclipped_multisite-extension
+  remote: kbingman/radiant-paperclipped_multisite-extension
 - name: rbac
   hub: netzpiraten
-  fork: saturnflyer/radiant-rbac-base-extension
+  remote: saturnflyer/radiant-rbac-base-extension
 - name: reorder
   hub: netzpiraten
-  fork: radiant/radiant-reorder-extension
+  remote: radiant/radiant-reorder-extension
 - name: settings
   hub: netzpiraten
-  fork: Squeegy/radiant-settings
+  remote: Squeegy/radiant-settings
 - name: share-layouts
   hub: netzpiraten
-  fork: radiant/radiant-share-layouts-extension
+  remote: radiant/radiant-share-layouts-extension
 - name: tags
   hub: netzpiraten
-  fork: jomz/radiant-tags-extension
+  remote: jomz/radiant-tags-extension
 - name: templates
   hub: netzpiraten
-  fork: seancribbs/radiant-templates-extension
+  remote: seancribbs/radiant-templates-extension
 - name: upload-manager
   hub: netzpiraten
-  fork: radiant-upload-manager-extension
+  remote: radiant-upload-manager-extension
 - name: wym-editor-filter
   hub: netzpiraten
-  fork: radiant-wym-editor-filter-extension
+  remote: radiant-wym-editor-filter-extension
