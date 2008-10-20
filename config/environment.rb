@@ -37,7 +37,7 @@ Radiant::Initializer.run do |config|
   # Only load the extensions named here, in the order given. By default all 
   # extensions in vendor/extensions are loaded, in alphabetical order. :all 
   # can be used as a placeholder for all extensions not explicitly named. 
-  # config.extensions = [ :all ] 
+  config.extensions = [ :help, :all ]
 
   # Force all environments to use the same logger level 
   # (by default production uses :info, the others :debug)

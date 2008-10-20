@@ -47,3 +47,6 @@
 - name: iphone
   hub: netzpirat
   remote: pilu/radiant-iphone-extension
+- name: help
+  hub: netzpirat
+  remote: radiant-upload-manager-extension

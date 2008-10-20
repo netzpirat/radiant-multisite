@@ -49,3 +49,6 @@
 [submodule "vendor/extensions/iphone"]
 	path = vendor/extensions/iphone
 	url = git@github.com:netzpirat/radiant-iphone-extension.git
+[submodule "vendor/extensions/help"]
+	path = vendor/extensions/help
+	url = git@github.com:netzpirat/radiant-help-extension.git
