@@ -19,3 +19,6 @@
 [submodule "vendor/extensions/reorder"]
 	path = vendor/extensions/reorder
 	url = git@github.com:netzpirat/radiant-reorder-extension.git
+[submodule "vendor/extensions/multi_site"]
+	path = vendor/extensions/multi_site
+	url = git@github.com:netzpirat/radiant-multi-site-extension.git

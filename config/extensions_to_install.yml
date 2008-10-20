@@ -10,13 +10,9 @@
 - name: gallery
   hub: netzpirat
   remote: pilu/radiant-gallery 
-
 - name: iphone
   hub: netzpirat
   remote: pilu/radiant-iphone-extension
-- name: multi-site
-  hub: netzpirat
-  remote: radiant/radiant-multi-site-extension
 - name: navigation-tags
   hub: netzpirat
   remote: derencius/navigation_tags
