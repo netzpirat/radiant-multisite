@@ -5,12 +5,6 @@
   hub: netzpirat
   remote: ntalbott/radiant-comments 
 
-- name: gallery
-  hub: netzpirat
-  remote: pilu/radiant-gallery 
-- name: iphone
-  hub: netzpirat
-  remote: pilu/radiant-iphone-extension
 
 - name: paperclipped
   hub: netzpirat
@@ -27,4 +21,6 @@
   hub: netzpirat
   remote: radiant-upload-manager-extension
 
-
+- name: rbac
+  hub: netzpirat
+  remote: saturnflyer/radiant-rbac-base-extension

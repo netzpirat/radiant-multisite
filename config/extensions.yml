@@ -32,9 +32,6 @@
 - name: page-list-view
   hub: netzpirat
   remote: avonderluft/radiant-page_list_view-extension
-- name: rbac
-  hub: netzpirat
-  remote: saturnflyer/radiant-rbac-base-extension
 - name: share-layouts
   hub: netzpirat
   remote: radiant/radiant-share-layouts-extension
@@ -44,3 +41,9 @@
 - name: templates
   hub: netzpirat
   remote: seancribbs/radiant-templates-extension
+- name: gallery
+  hub: netzpirat
+  remote: pilu/radiant-gallery 
+- name: iphone
+  hub: netzpirat
+  remote: pilu/radiant-iphone-extension

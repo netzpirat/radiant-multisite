@@ -43,3 +43,9 @@
 [submodule "vendor/extensions/templates"]
 	path = vendor/extensions/templates
 	url = git@github.com:netzpirat/radiant-templates-extension.git
+[submodule "vendor/extensions/gallery"]
+	path = vendor/extensions/gallery
+	url = git@github.com:netzpirat/radiant-gallery-extension.git
+[submodule "vendor/extensions/iphone"]
+	path = vendor/extensions/iphone
+	url = git@github.com:netzpirat/radiant-iphone-extension.git
