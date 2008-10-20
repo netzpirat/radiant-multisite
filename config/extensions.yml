@@ -39,6 +39,9 @@
   hub: netzpiraten
   rake: assets
   fork: kbingman/paperclipped
+- name: paperclipped-multisite
+  hub: netzpiraten
+  fork: kbingman/radiant-paperclipped_multisite-extension
 - name: rbac
   hub: netzpiraten
   fork: saturnflyer/radiant-rbac-base-extension
