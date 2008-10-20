@@ -8,10 +8,7 @@ set :application, "extranett"
 # ================================================================
 
 set :scm, "git"
-set :repository,  "github:/var/git/radiant-extranett.git"
-
-set :scm_password, "git9nop"
-set :scm_username, "git"
+set :repository,  "git@github.com:netzpirat/radiant-extranett.git"
 
 set :branch, "master"
 set :git_enable_submodules, 1
