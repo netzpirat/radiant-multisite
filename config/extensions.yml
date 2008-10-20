@@ -1,4 +1,4 @@
 ---
 - name: admin-breadcrumbs
-  hub: netzpiraten
+  hub: netzpirat
   remote: saturnflyer/radiant-admin_breadcrumbs-extension

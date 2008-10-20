@@ -1,3 +1,6 @@
 [submodule "vendor/extensions/ray"]
 	path = vendor/extensions/ray
 	url = git@github.com:netzpirat/radiant-ray-extension.git
+[submodule "vendor/extensions/admin_breadcrumbs"]
+	path = vendor/extensions/admin_breadcrumbs
+	url = git@github.com:netzpirat/radiant-admin-breadcrumbs-extension.git
