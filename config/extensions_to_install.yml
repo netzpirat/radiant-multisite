@@ -8,19 +8,3 @@
   hub: netzpirat
   remote: saturnflyer/radiant-rbac-base-extension
 
-- name: paperclipped
-  hub: netzpirat
-  rake: assets
-  remote: kbingman/paperclipped
-- name: paperclipped-multisite
-  hub: netzpirat
-  remote: kbingman/radiant-paperclipped_multisite-extension
-- name: upload-manager
-  hub: netzpirat
-  remote: haitham/radiant-upload-manager
-
-- name: help
-  hub: netzpirat
-  remote: radiant-upload-manager-extension
-
-
