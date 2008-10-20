@@ -8,3 +8,12 @@
 - name: copy-move
   hub: netzpirat
   remote: pilu/radiant-copy-move
+- name: page-preview
+  hub: netzpirat
+  remote: vigetlabs/radiant_page_preview_extension
+- name: import-export
+  hub: netzpirat
+  remote: radiant/radiant-import-export-extension
+- name: reorder
+  hub: netzpirat
+  remote: radiant/radiant-reorder-extension

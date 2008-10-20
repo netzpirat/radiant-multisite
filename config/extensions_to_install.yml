@@ -10,9 +10,7 @@
 - name: gallery
   hub: netzpirat
   remote: pilu/radiant-gallery 
-- name: import-export
-  hub: netzpirat
-  remote: radiant/radiant-import-export-extension
+
 - name: iphone
   hub: netzpirat
   remote: pilu/radiant-iphone-extension
@@ -25,9 +23,6 @@
 - name: page-list-view
   hub: netzpirat
   remote: avonderluft/radiant-page_list_view-extension
-- name: page-preview
-  hub: netzpirat
-  remote: vigetlabs/radiant_page_preview_extension
 - name: paperclipped
   hub: netzpirat
   rake: assets
@@ -38,9 +33,6 @@
 - name: rbac
   hub: netzpirat
   remote: saturnflyer/radiant-rbac-base-extension
-- name: reorder
-  hub: netzpirat
-  remote: radiant/radiant-reorder-extension
 - name: settings
   hub: netzpirat
   remote: Squeegy/radiant-settings
