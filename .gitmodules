@@ -7,3 +7,6 @@
 [submodule "vendor/extensions/wym_editor_filter"]
 	path = vendor/extensions/wym_editor_filter
 	url = git@github.com:netzpirat/radiant-wym-editor-filter-extension.git
+[submodule "vendor/extensions/copy_move"]
+	path = vendor/extensions/copy_move
+	url = git@github.com:netzpirat/radiant-copy-move-extension.git

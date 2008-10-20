@@ -4,9 +4,6 @@
 - name: comments
   hub: netzpirat
   remote: ntalbott/radiant-comments 
-- name: copy-move
-  hub: netzpirat
-  remote: pilu/radiant-copy-move
 - name: dashboard
   hub: netzpirat
   remote: saturnflyer/radiant-dashboard-extension

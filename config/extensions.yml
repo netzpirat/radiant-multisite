@@ -5,3 +5,6 @@
 - name: wym-editor-filter
   hub: netzpirat
   remote: radiant-wym-editor-filter-extension
+- name: copy-move
+  hub: netzpirat
+  remote: pilu/radiant-copy-move
