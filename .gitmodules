@@ -4,3 +4,6 @@
 [submodule "vendor/extensions/admin_breadcrumbs"]
 	path = vendor/extensions/admin_breadcrumbs
 	url = git@github.com:netzpirat/radiant-admin-breadcrumbs-extension.git
+[submodule "vendor/extensions/wym_editor_filter"]
+	path = vendor/extensions/wym_editor_filter
+	url = git@github.com:netzpirat/radiant-wym-editor-filter-extension.git

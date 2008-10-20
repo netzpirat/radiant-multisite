@@ -2,3 +2,6 @@
 - name: admin-breadcrumbs
   hub: netzpirat
   remote: saturnflyer/radiant-admin_breadcrumbs-extension
+- name: wym-editor-filter
+  hub: netzpirat
+  remote: radiant-wym-editor-filter-extension
