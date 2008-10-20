@@ -8,7 +8,7 @@ set :application, "extranett"
 # ================================================================
 
 set :scm, "git"
-set :repository,  "www.netzpiraten.ch:/var/git/radiant-extranett.git"
+set :repository,  "github:/var/git/radiant-extranett.git"
 
 set :scm_password, "git9nop"
 set :scm_username, "git"
@@ -28,7 +28,7 @@ set :mod_rails_restart_file, "/var/www/www.extranett.ch/current/tmp/restart.txt"
 # ================================================================
 
 set :deploy_to, "/var/www/www.extranett.ch"
-set :deploy_via, :checkout
+set :deploy_via, :remote_cache
 
 set :use_sudo, false
 
