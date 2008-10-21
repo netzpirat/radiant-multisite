@@ -1,4 +1,11 @@
 ---
+- name: paperclipped
+  hub: netzpirat
+  rake: assets
+  remote: kbingman/paperclipped
+- name: paperclipped-multisite
+  hub: netzpirat
+  remote: kbingman/radiant-paperclipped_multisite-extension
 - name: admin-breadcrumbs
   hub: netzpirat
   remote: saturnflyer/radiant-admin_breadcrumbs-extension
@@ -50,13 +57,6 @@
 - name: help
   hub: netzpirat
   remote: radiant-upload-manager-extension
-- name: paperclipped
-  hub: netzpirat
-  rake: assets
-  remote: kbingman/paperclipped
-- name: paperclipped-multisite
-  hub: netzpirat
-  remote: kbingman/radiant-paperclipped_multisite-extension
 - name: upload-manager
   hub: netzpirat
   remote: haitham/radiant-upload-manager
