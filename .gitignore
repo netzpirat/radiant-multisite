@@ -5,3 +5,4 @@ doc/api
 doc/app
 cache/[^.]*
 config/database.yml
+nbproject
