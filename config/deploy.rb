@@ -11,7 +11,7 @@ set :scm, "git"
 set :repository,  "ssh://www.netzpiraten.ch/var/git/radiant-extranett.git"
 
 set :branch, "master"
-set :git_enable_submodules, 1
+set :git_enable_submodules, 1    #comment for cap deploy:setup
 
 # ================================================================
 # RAILS
