@@ -8,7 +8,7 @@ set :application, "extranett"
 # ================================================================
 
 set :scm, "git"
-set :repository,  "git@github.com:netzpirat/radiant-extranett.git"
+set :repository,  "ssh://www.netzpiraten.ch/var/git/radiant-extranett.git"
 
 set :branch, "master"
 set :git_enable_submodules, 1
@@ -25,8 +25,6 @@ set :mod_rails_restart_file, "/var/www/www.extranett.ch/current/tmp/restart.txt"
 # ================================================================
 
 set :deploy_to, "/var/www/www.extranett.ch"
-set :deploy_via, :remote_cache
-
 set :use_sudo, false
 
 set :apache_init_script, "/etc/init.d/apache2"
