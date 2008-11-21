@@ -1,0 +1,13 @@
+= Page Preview Radiant Extension
+
+by Brian Landau of Viget Labs
+
+== Description
+
+Plug this extension in and you can view previews of pages, even if they are in "draft" mode.
+
+A button is available on the edit page that will pop up the preview.
+
+<em>Browser popup blockers will possibly prevent this functionality from working properly.
+If you are having problems turn off the popup blocker.</em>
+

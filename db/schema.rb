@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 21) do
 
   create_table "assets", :force => true do |t|
     t.string   "caption"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "updated_by_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id"
+  end
+
+  create_table "config", :force => true do |t|
+    t.string "key",   :limit => 40, :default => "", :null => false
+    t.string "value",               :default => ""
+  end
+
+  add_index "config", ["key"], :name => "key", :unique => true
+
+  create_table "extension_meta", :force => true do |t|
+    t.string  "name"
+    t.integer "schema_version", :default => 0
+    t.boolean "enabled",        :default => true
   end
 
   create_table "galleries", :force => true do |t|
@@ -74,6 +88,17 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "updated_by"
   end
 
+  create_table "layouts", :force => true do |t|
+    t.string   "name",          :limit => 100
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.string   "content_type",  :limit => 40
+    t.integer  "lock_version",                 :default => 0
+  end
+
   create_table "meta_tags", :force => true do |t|
     t.string "name", :null => false
   end
@@ -86,12 +111,47 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "position"
   end
 
+  create_table "page_parts", :force => true do |t|
+    t.string  "name",      :limit => 100
+    t.string  "filter_id", :limit => 25
+    t.text    "content"
+    t.integer "page_id"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "slug",          :limit => 100
+    t.string   "breadcrumb",    :limit => 160
+    t.string   "class_name",    :limit => 25
+    t.integer  "status_id",                    :default => 1,     :null => false
+    t.integer  "parent_id"
+    t.integer  "layout_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "published_at"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.boolean  "virtual",                      :default => false, :null => false
+    t.integer  "lock_version",                 :default => 0
+    t.string   "description"
+    t.string   "keywords"
+  end
+
   create_table "part_types", :force => true do |t|
     t.string "name"
     t.string "field_type"
     t.string "field_class"
     t.string "field_styles"
   end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id"
+    t.text     "data"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "sites", :force => true do |t|
     t.string  "name"
@@ -100,6 +160,19 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "position",    :default => 0
     t.string  "base_domain"
   end
+
+  create_table "snippets", :force => true do |t|
+    t.string   "name",          :limit => 100, :default => "", :null => false
+    t.string   "filter_id",     :limit => 25
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.integer  "lock_version",                 :default => 0
+  end
+
+  add_index "snippets", ["name"], :name => "name", :unique => true
 
   create_table "taggings", :force => true do |t|
     t.integer "meta_tag_id",   :null => false
@@ -129,5 +202,24 @@ ActiveRecord::Schema.define(:version => 0) do
 
   add_index "templates", ["name"], :name => "index_templates_on_name"
   add_index "templates", ["position"], :name => "index_templates_on_position"
+
+  create_table "users", :force => true do |t|
+    t.string   "name",          :limit => 100
+    t.string   "email"
+    t.string   "login",         :limit => 40,  :default => "",    :null => false
+    t.string   "password",      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.boolean  "admin",                        :default => false, :null => false
+    t.boolean  "developer",                    :default => false, :null => false
+    t.text     "notes"
+    t.integer  "lock_version",                 :default => 0
+    t.string   "salt"
+    t.string   "session_token"
+  end
+
+  add_index "users", ["login"], :name => "login", :unique => true
 
 end
