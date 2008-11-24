@@ -36,18 +36,12 @@
 - name: navigation-tags
   hub: netzpirat
   remote: derencius/navigation_tags
-- name: page-list-view
-  hub: netzpirat
-  remote: avonderluft/radiant-page_list_view-extension
 - name: share-layouts
   hub: netzpirat
   remote: radiant/radiant-share-layouts-extension
 - name: tags
   hub: netzpirat
   remote: jomz/radiant-tags-extension
-- name: templates
-  hub: netzpirat
-  remote: seancribbs/radiant-templates-extension
 - name: gallery
   hub: netzpirat
   remote: pilu/radiant-gallery 
