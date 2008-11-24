@@ -55,3 +55,6 @@
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git@github.com:netzpirat/radiant-paperclipped-extension.git
+[submodule "vendor/extensions/sns"]
+	path = vendor/extensions/sns
+	url = git@github.com:netzpirat/radiant-sns-extension.git
