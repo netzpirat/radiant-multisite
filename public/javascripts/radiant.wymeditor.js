@@ -71,7 +71,7 @@ function init_load_wym_editor(){
 
 function boot_wym(elem){	
   jQuery(elem).wymeditor({
-    lang: 'nl',
+    lang: 'en',
     classesItems: [
 		  {'name': 'float_left', 'title': 'PARA: left', 'expr': 'p'},
 		  {'name': 'float_right', 'title': 'PARA: right', 'expr': 'p'},
