@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(:version => 21) do
   end
 
   create_table "config", :force => true do |t|
-    t.string "key",   :limit => 40, :default => "", :null => false
-    t.string "value",               :default => ""
+    t.string "key",         :limit => 40, :default => "", :null => false
+    t.string "value",                     :default => ""
+    t.text   "description"
   end
 
   add_index "config", ["key"], :name => "key", :unique => true
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(:version => 21) do
     t.integer  "updated_by_id"
     t.string   "content_type",  :limit => 40
     t.integer  "lock_version",                 :default => 0
+    t.integer  "site_id"
   end
 
   create_table "meta_tags", :force => true do |t|
@@ -120,10 +122,10 @@ ActiveRecord::Schema.define(:version => 21) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.string   "slug",          :limit => 100
-    t.string   "breadcrumb",    :limit => 160
-    t.string   "class_name",    :limit => 25
-    t.integer  "status_id",                    :default => 1,     :null => false
+    t.string   "slug",            :limit => 100
+    t.string   "breadcrumb",      :limit => 160
+    t.string   "class_name",      :limit => 25
+    t.integer  "status_id",                      :default => 1,     :null => false
     t.integer  "parent_id"
     t.integer  "layout_id"
     t.datetime "created_at"
@@ -131,17 +133,12 @@ ActiveRecord::Schema.define(:version => 21) do
     t.datetime "published_at"
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
-    t.boolean  "virtual",                      :default => false, :null => false
-    t.integer  "lock_version",                 :default => 0
+    t.boolean  "virtual",                        :default => false, :null => false
+    t.integer  "lock_version",                   :default => 0
     t.string   "description"
     t.string   "keywords"
-  end
-
-  create_table "part_types", :force => true do |t|
-    t.string "name"
-    t.string "field_type"
-    t.string "field_class"
-    t.string "field_styles"
+    t.integer  "position"
+    t.integer  "base_gallery_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -182,26 +179,23 @@ ActiveRecord::Schema.define(:version => 21) do
 
   add_index "taggings", ["meta_tag_id", "taggable_id", "taggable_type"], :name => "index_taggings_on_meta_tag_id_and_taggable_id_and_taggable_type", :unique => true
 
-  create_table "template_parts", :force => true do |t|
-    t.integer "template_id"
-    t.string  "name"
-    t.string  "filter_id"
-    t.integer "part_type_id"
-    t.string  "description"
+  create_table "text_asset_dependencies", :force => true do |t|
+    t.integer  "text_asset_id"
+    t.string   "names"
+    t.datetime "effectively_updated_at"
   end
 
-  add_index "template_parts", ["template_id"], :name => "template_parts_on_template_id"
-
-  create_table "templates", :force => true do |t|
-    t.string  "name"
-    t.text    "content"
-    t.integer "layout_id"
-    t.integer "position"
-    t.string  "page_class_name"
+  create_table "text_assets", :force => true do |t|
+    t.string   "class_name",    :limit => 25
+    t.string   "name",          :limit => 100
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.integer  "lock_version"
+    t.string   "filter_id",     :limit => 25
   end
-
-  add_index "templates", ["name"], :name => "index_templates_on_name"
-  add_index "templates", ["position"], :name => "index_templates_on_position"
 
   create_table "users", :force => true do |t|
     t.string   "name",          :limit => 100
@@ -218,6 +212,7 @@ ActiveRecord::Schema.define(:version => 21) do
     t.integer  "lock_version",                 :default => 0
     t.string   "salt"
     t.string   "session_token"
+    t.integer  "site_id"
   end
 
   add_index "users", ["login"], :name => "login", :unique => true
