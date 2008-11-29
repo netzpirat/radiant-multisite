@@ -38,11 +38,11 @@
                   padding:8px 5px 5px;
                   margin:10px; }
   td            { background: #F0F4F8; }
-  th            { background: #ffffcc; }
+  th            { background: #CDC295; }
   ul,
-  ol            { border-left:20px solid #B9C4D0; padding:0px 5px; }
+      ol        { border-left:20px solid #CDC295; padding:0px 5px; }
   caption       { background: #E4E4B0; padding: 5px; font-weight: bold; }
-  table         { font-size: 12px; width: 500px; }
+  table         { width: 500px; }
   td            { width: 25%; }
   blockquote    { margin-left: 30px; }
   pre           { background-color:transparent; border: 1px solid white; }
@@ -92,3 +92,5 @@
         border: 0px;
         border-right: 1px solid #c8e2f0;
 }
+
+a:link, a:visited, a:focus, a:hover, a:active { color: blue; }

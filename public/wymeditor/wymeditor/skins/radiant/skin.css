@@ -77,7 +77,9 @@
     /*option: add this class to a section to make it render as a panel*/
         .wym_skin_radiant .wym_panel              { }
         .wym_skin_radiant .wym_panel h2           { display: block; }
-        .wym_skin_radiant .wym_panel li           { font-size:115%; font-weight: bold; border-bottom: 1px solid #EAEAEA; padding:4px; }
+        .wym_skin_radiant .wym_panel li           { font-size:115%; font-weight: bold; border-bottom: 1px solid #EAEAEA; }
+        .wym_skin_radiant .wym_panel li a         { padding:4px; }
+
 
     /*option: add this class to a section to make it render as a dropdown menu*/
         .wym_skin_radiant .wym_dropdown h2        { display: block; }
@@ -116,7 +118,6 @@
         .wym_skin_radiant .wym_section h2             { background: #F5F5F5; font-size: 90%; border-bottom: 1px solid #EAEAEA; font-weight:normal; padding:2px 4px;}
         .wym_skin_radiant .wym_section h2 span        { color: #EAEAEA;}
         .wym_skin_radiant .wym_panel                  { padding: 0; background: white;}
-        .wym_skin_radiant .wym_panel ul               { margin: 2px 0 5px; }
         .wym_skin_radiant .wym_dropdown               { padding: 0; border: solid gray; border-width: 1px 1px 0 1px; }
         .wym_skin_radiant .wym_dropdown ul            { border: solid gray; border-width: 0 1px 1px 1px; margin-left: -1px; padding: 5px 10px 5px 3px;}
         
