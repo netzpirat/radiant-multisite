@@ -70,7 +70,7 @@ function init_load_wym_editor(){
 }
 
 function adjustFramesize(iframe) {
-  iframe.style.height = (iframe.contentWindow.document.height + 35) + "px";
+  iframe.style.height = (iframe.contentWindow.document.body.offsetHeight + 35) + "px";
   setTimeout(function(){ adjustFramesize(iframe); }, 100);
 }
 
