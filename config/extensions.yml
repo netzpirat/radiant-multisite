@@ -51,9 +51,6 @@
 - name: help
   hub: netzpirat
   remote: radiant-upload-manager-extension
-- name: upload-manager
-  hub: netzpirat
-  remote: haitham/radiant-upload-manager
 - name: sns
   hub: netzpirat
   remote: SwankInnovations/radiant-sns-extension
