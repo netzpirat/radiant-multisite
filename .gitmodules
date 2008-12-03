@@ -61,3 +61,6 @@
 [submodule "vendor/plugins/exceptional"]
 	path = vendor/plugins/exceptional
 	url = git://github.com/contrast/exceptional.git
+[submodule "vendor/plugins/rpm"]
+	path = vendor/plugins/rpm
+	url = git://github.com/newrelic/rpm.git
