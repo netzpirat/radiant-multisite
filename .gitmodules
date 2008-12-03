@@ -58,3 +58,6 @@
 [submodule "vendor/extensions/sns"]
 	path = vendor/extensions/sns
 	url = git@github.com:netzpirat/radiant-sns-extension.git
+[submodule "vendor/plugins/exceptional"]
+	path = vendor/plugins/exceptional
+	url = git://github.com/contrast/exceptional.git
