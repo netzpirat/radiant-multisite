@@ -42,6 +42,9 @@
 - name: tags
   hub: netzpirat
   remote: jomz/radiant-tags-extension
+- name: tags-multi-site
+  hub: netzpirat
+  remote: RSpace/radiant-tags_multi_site-extension
 - name: gallery
   hub: netzpirat
   remote: pilu/radiant-gallery 
@@ -54,3 +57,9 @@
 - name: sns
   hub: netzpirat
   remote: SwankInnovations/radiant-sns-extension
+- name: search
+  hub: netzpirat
+  remote: radiant/radiant-search-extension
+- name: search-multi-site
+  hub: netzpirat
+  remote: RSpace/radiant-search_multi_site-extension
