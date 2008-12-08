@@ -64,3 +64,12 @@
 [submodule "vendor/plugins/rpm"]
 	path = vendor/plugins/rpm
 	url = git://github.com/newrelic/rpm.git
+[submodule "vendor/extensions/search"]
+	path = vendor/extensions/search
+	url = git@github.com:netzpirat/radiant-search-extension.git
+[submodule "vendor/extensions/search_multi_site"]
+	path = vendor/extensions/search_multi_site
+	url = git@github.com:netzpirat/radiant-search-multi-site-extension.git
+[submodule "vendor/extensions/tags_multi_site"]
+	path = vendor/extensions/tags_multi_site
+	url = git@github.com:netzpirat/radiant-tags-multi-site-extension.git
