@@ -73,3 +73,6 @@
 [submodule "vendor/extensions/tags_multi_site"]
 	path = vendor/extensions/tags_multi_site
 	url = git@github.com:netzpirat/radiant-tags-multi-site-extension.git
+[submodule "vendor/plugins/attachment_fu"]
+	path = vendor/plugins/attachment_fu
+	url = git://github.com/technoweenie/attachment_fu.git
