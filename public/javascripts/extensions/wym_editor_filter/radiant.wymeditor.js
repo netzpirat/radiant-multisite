@@ -11,6 +11,9 @@ Event.observe(window, 'load', init_load_wym_editor, false);
 // references to the WYMeditor instances
 var editors = new Array();
 
+// references to the content height adjustment timers
+var timers = new Array();
+
 // These tokens are for Radiant CMS radius tags  
 //XhtmlLexer.prototype.addTokens = function()
 //{
@@ -248,7 +251,7 @@ function boot_wym(elem) {
 
       // enhancements to the editor
       bind_droppability(wym._iframe);
-      adjustFramesize(wym._iframe);
+      timers[elem.id] = setInterval(function(){ adjustFramesize(wym._iframe); }, 20);
     },
 
     /**
@@ -292,6 +295,9 @@ function boot_wym(elem) {
  * @param elem - the original text area
  */
 function unboot_wym(elem){
+
+  // stop auto resize timer
+  clearIntervall(timers[elem.id]);
 
   // hide wym
   jQuery(elem).parent().find(".wym_box").remove();
@@ -410,16 +416,7 @@ function bind_droppability(box) {
  * changed.
  */
 function adjustFramesize(iframe) {
-
-// iframe not unbooted?
-  if (iframe.contentWindow) {
-
-    // adjust iframe height
-    iframe.style.height = (iframe.contentWindow.document.body.offsetHeight + 35) + "px";
-
-    // check again in 100ms
-    setTimeout(function(){ adjustFramesize(iframe); }, 100);
-  }
+  iframe.style.height = (iframe.contentWindow.document.body.offsetHeight + 35) + "px";
 }
 
 /**
