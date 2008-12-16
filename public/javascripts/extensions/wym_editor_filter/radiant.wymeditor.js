@@ -316,6 +316,9 @@ function unboot_wym(elem){
     }
   }
 
+  // TODO: update regalar expression to also match http://localhost:3000/assets
+  // and http://localhost:3000/page_attachments
+
   // fix urls to page attachments
   var regex = new RegExp('src="([\.\/]+)/page_attachments', 'g');
   var m = content.match(regex);
@@ -335,6 +338,11 @@ function unboot_wym(elem){
       var content = content.replace(m[i], match)
     }
   }
+
+  // TODO: convert <img src="/assets/x/foo" alt="foo" /> to
+  // <r:assets:image title="foo" />
+
+  // TODO: must keep image resizing from the visual editor
 
   // update textarea content
   elem.value = content;
@@ -426,6 +434,9 @@ function adjustFramesize(iframe) {
  * @param cmd - the command to execute
  */
 WYMeditor.editor.prototype.exec = function(cmd) {
+
+  // TODO: if browser is not ie, use BlockUI to show
+  // see http://trac.wymeditor.org/trac/ticket/63
 
   //base function for execCommand
   //open a dialog or exec
