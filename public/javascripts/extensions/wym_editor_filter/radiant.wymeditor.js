@@ -352,13 +352,12 @@ function unboot_all_wym() {
       // Find all parts that have WYM set as filter
       filter_select = $("part_" + i + "_filter_id");
       if(filter_select.value == 'WymEditor'){
-        var index = editors["part_" + i + "_content"];
-        WYMeditor.INSTANCES[index].update();
+        unboot_wym($('part_'+ i +'_content'));
       } 
     }
   } else if ($('snippet_filter')) {                // We're on the snippet edit screen
     if ($F('snippet_filter') == 'WymEditor') {
-      WYMeditor.INSTANCES[0].update();
+      unboot_wym($$('.textarea'));
     }
   }
   return true;
