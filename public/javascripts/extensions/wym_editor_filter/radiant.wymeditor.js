@@ -14,12 +14,12 @@ var editors = new Array();
 // references to the content height adjustment timers
 var timers = new Array();
 
-// These tokens are for Radiant CMS radius tags  
+// These tokens are for Radiant CMS radius tags
 //XhtmlLexer.prototype.addTokens = function()
 //{
 //  this.addEntryPattern("</?r:", 'Text', 'Text');
-//  this.addExitPattern(">", 'Text'); 
-//  
+//  this.addExitPattern(">", 'Text');
+//
 //  this.addCommentTokens('Text');
 //  this.addScriptTokens('Text');
 //  this.addCssTokens('Text');
@@ -54,7 +54,7 @@ function init_load_wym_editor(){
 		for (var i = 0; i < ta.length; i++){
 			boot_wym(ta[i]);
 		}
-		
+
   } else if ($('snippet_filter')) {
     if ($F('snippet_filter') == 'WymEditor') {
 			boot_wym(jQuery('.textarea')[0]);
@@ -80,11 +80,11 @@ function text_input_method(index, filter) {
 		}
 	} else {
 		// control for snippets
-		var elem = $$('.textarea');
+		var elem = $$('.textarea')[0];
 		if (filter == "WymEditor") {
-			boot_wym(elem[0]);
+			boot_wym(elem);
 		} else {
-			unboot_wym(elem[0]);
+			unboot_wym(elem);
 		}
 	}
 }
@@ -367,11 +367,11 @@ function unboot_all_wym() {
       filter_select = $("part_" + i + "_filter_id");
       if(filter_select.value == 'WymEditor'){
         unboot_wym($('part_'+ i +'_content'));
-      } 
+      }
     }
   } else if ($('snippet_filter')) {                // We're on the snippet edit screen
     if ($F('snippet_filter') == 'WymEditor') {
-      unboot_wym($$('.textarea'));
+      unboot_wym($$('.textarea')[0]);
     }
   }
   return true;
@@ -387,9 +387,9 @@ function bind_droppability(box) {
   Droppables.add(box, {
 
     accept: 'asset',
-    
+
     /* An element has been dropped into the iframe
-     * 
+     *
      * @param element - the dropped element
      */
     onDrop: function(element) {
@@ -414,7 +414,7 @@ function bind_droppability(box) {
       wymm.insert(tag);
     }
   });
-  
+
   new Draggable('asset-bucket');
 }
 
