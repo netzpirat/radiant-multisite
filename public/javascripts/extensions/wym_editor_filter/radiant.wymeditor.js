@@ -402,7 +402,7 @@ function bind_droppability(box) {
     }
   });
   
-  new Draggable('asset-bucket', { starteffect: 'none' });
+  new Draggable('asset-bucket');
 }
 
 
