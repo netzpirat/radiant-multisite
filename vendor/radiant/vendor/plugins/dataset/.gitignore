@@ -1,0 +1,6 @@
+log
+sqlite3.db
+environments
+vendor
+tmp
+.tm_last_run_ruby

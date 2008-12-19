@@ -1,0 +1,15 @@
+67/28/08 - Added experimental post-commit hook. [Matthew Bass]
+
+5/8/08 - Moved to github. [Matthew Bass]
+
+2/27/08 - Updated README. [Matthew Bass]
+
+12/17/07 - Calls to #vr now accept raw HTML. [Matthew Bass]
+
+11/6/07 - Added note about server to README. [Matthew Bass]
+
+11/2/07 - Added unit tests and updated README file. [Matthew Bass]
+
+11/2/07 - Updated install.rb to create public/tmp and svn:ignore it. [Matthew Bass]
+
+10/22/07 - Happy birthday! [Matthew Bass]
