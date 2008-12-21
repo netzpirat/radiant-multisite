@@ -21,9 +21,8 @@
 - name: import-export
   hub: netzpirat
   remote: radiant/radiant-import-export-extension
-- name: reorder
-  hub: netzpirat
-  remote: radiant/radiant-reorder-extension
+- name: first-reorder
+  hub: jomz
 - name: multi-site
   hub: netzpirat
   remote: radiant/radiant-multi-site-extension
