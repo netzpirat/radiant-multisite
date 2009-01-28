@@ -1,1 +1,0 @@
-Dir[File.dirname(__FILE__) + '/matchers/*'].each { |f| require f }
