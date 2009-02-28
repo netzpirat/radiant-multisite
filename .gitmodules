@@ -88,3 +88,6 @@
 [submodule "vendor/extensions/drag_order"]
 	path = vendor/extensions/drag_order
 	url = git@github.com:netzpirat/radiant-drag-order-extension.git
+[submodule "vendor/extensions/index_page"]
+	path = vendor/extensions/index_page
+	url = git@github.com:netzpirat/radiant-index-page-extension.git

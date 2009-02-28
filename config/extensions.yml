@@ -19,6 +19,8 @@
   hub: netzpirat
 - name: import_export
   hub: netzpirat
+- name: index_page
+  hub: netzpirat
 - name: multi_site
   hub: netzpirat
 - name: navigation_tags
