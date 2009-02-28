@@ -76,3 +76,15 @@
 [submodule "vendor/extensions/dav"]
 	path = vendor/extensions/dav
 	url = git@github.com:netzpirat/radiant-dav-extension.git
+[submodule "vendor/extensions/blog"]
+	path = vendor/extensions/blog
+	url = git@github.com:netzpirat/radiant-blog-extension.git
+[submodule "vendor/extensions/conditional_tags"]
+	path = vendor/extensions/conditional_tags
+	url = git@github.com:netzpirat/radiant-conditional-tags-extension.git
+[submodule "vendor/extensions/scoped_admin"]
+	path = vendor/extensions/scoped_admin
+	url = git@github.com:netzpirat/radiant-scoped-admin-extension.git
+[submodule "vendor/extensions/drag_order"]
+	path = vendor/extensions/drag_order
+	url = git@github.com:netzpirat/radiant-drag-order-extension.git

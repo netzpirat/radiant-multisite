@@ -1,64 +1,53 @@
 ---
-- name: paperclipped
+- name: admin_breadcrumbs
   hub: netzpirat
-  rake: assets
-  remote: kbingman/paperclipped
-- name: paperclipped-multisite
+- name: blog
   hub: netzpirat
-  remote: kbingman/radiant-paperclipped_multisite-extension
-- name: admin-breadcrumbs
+- name: conditional_tags
   hub: netzpirat
-  remote: saturnflyer/radiant-admin_breadcrumbs-extension
-- name: wym-editor-filter
+- name: copy_move
   hub: netzpirat
-  remote: radiant-wym-editor-filter-extension
-- name: copy-move
-  hub: netzpirat
-  remote: pilu/radiant-copy-move
-- name: page-preview
-  hub: netzpirat
-  remote: vigetlabs/radiant_page_preview_extension
-- name: import-export
-  hub: netzpirat
-  remote: radiant/radiant-import-export-extension
-- name: first-reorder
-  hub: jomz
-- name: multi-site
-  hub: netzpirat
-  remote: radiant/radiant-multi-site-extension
-- name: settings
-  hub: netzpirat
-  remote: Squeegy/radiant-settings
 - name: dashboard
   hub: netzpirat
-  remote: saturnflyer/radiant-dashboard-extension
-- name: navigation-tags
+- name: dav
   hub: netzpirat
-  remote: derencius/navigation_tags
-- name: share-layouts
+- name: drag_order
   hub: netzpirat
-  remote: radiant/radiant-share-layouts-extension
-- name: tags
-  hub: netzpirat
-  remote: jomz/radiant-tags-extension
-- name: tags-multi-site
-  hub: netzpirat
-  remote: RSpace/radiant-tags_multi_site-extension
 - name: gallery
   hub: netzpirat
-  remote: pilu/radiant-gallery 
-- name: iphone
-  hub: netzpirat
-  remote: pilu/radiant-iphone-extension
 - name: help
   hub: netzpirat
-  remote: radiant-upload-manager-extension
-- name: sns
+- name: import_export
   hub: netzpirat
-  remote: SwankInnovations/radiant-sns-extension
+- name: multi_site
+  hub: netzpirat
+- name: navigation_tags
+  hub: netzpirat
+- name: page_preview
+  hub: netzpirat
+- name: paperclipped
+  hub: netzpirat
+- name: paperclipped_multisite
+  hub: netzpirat
+- name: ray
+  hub: netzpirat
+- name: reorder
+  hub: netzpirat
+- name: scoped_admin
+  hub: netzpirat
 - name: search
   hub: netzpirat
-  remote: radiant/radiant-search-extension
-- name: search-multi-site
+- name: search_multi_site
   hub: netzpirat
-  remote: RSpace/radiant-search_multi_site-extension
+- name: settings
+  hub: netzpirat
+- name: share_layouts
+  hub: netzpirat
+- name: sns
+  hub: netzpirat
+- name: tags
+  hub: netzpirat
+- name: tags_multi_site
+  hub: netzpirat
+- name: wym_editor_filter
+  hub: netzpirat
