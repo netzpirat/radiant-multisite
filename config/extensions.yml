@@ -33,8 +33,6 @@
   hub: netzpirat
 - name: ray
   hub: netzpirat
-- name: reorder
-  hub: netzpirat
 - name: scoped_admin
   hub: netzpirat
 - name: search
