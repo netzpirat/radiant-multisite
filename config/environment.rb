@@ -4,16 +4,6 @@
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'
 
-unless '1.9'.respond_to?(:force_encoding)
-  String.class_eval do
-    begin
-      remove_method :chars
-    rescue NameError
-      # OK
-    end
-  end
-end
-
 # Specifies gem version of Rails to use when vendor/rails is not present
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -49,7 +39,7 @@ Radiant::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_radiant_session',
-    :secret      => '4af5543aedb404ba69ad4e0609f0d94a646eb446'
+    :secret      => '61d72ea8b17ad373277c327092e25f6315259646'
   }
   
   # Use the database for sessions instead of the cookie-based default,
@@ -82,7 +72,6 @@ Radiant::Initializer.run do |config|
     # Add new inflection rules using the following format:
     ActiveSupport::Inflector.inflections do |inflect|
       inflect.uncountable 'config'
-      inflect.uncountable 'meta'
     end
 
     # Auto-require text filters
@@ -93,5 +82,6 @@ Radiant::Initializer.run do |config|
     # Response Caching Defaults
     ResponseCache.defaults[:directory] = ActionController::Base.page_cache_directory
     ResponseCache.defaults[:logger]    = ActionController::Base.logger
-  end
+ 
+   end
 end
