@@ -6,3 +6,4 @@ doc/app
 cache/[^.]*
 config/database.yml
 nbproject
+.idea
