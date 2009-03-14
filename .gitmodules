@@ -64,9 +64,6 @@
 [submodule "vendor/plugins/attachment_fu"]
 	path = vendor/plugins/attachment_fu
 	url = git://github.com/technoweenie/attachment_fu.git
-[submodule "vendor/extensions/reorder"]
-	path = vendor/extensions/reorder
-	url = git://github.com/netzpirat/radiant-first-reorder-extension.git
 [submodule "vendor/extensions/page_preview"]
 	path = vendor/extensions/page_preview
 	url = git@github.com:netzpirat/radiant-page-preview-extension.git
