@@ -3,6 +3,8 @@ default_run_options[:pty] = true
 
 set :application, "extranett"
 
+after "deploy", "deploy:cleanup"
+
 # ================================================================
 # SCM
 # ================================================================
