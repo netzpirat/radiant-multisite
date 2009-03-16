@@ -23,7 +23,7 @@ Radiant::Initializer.run do |config|
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-  
+ 
   # Only load the extensions named here, in the order given. By default all 
   # extensions in vendor/extensions are loaded, in alphabetical order. :all 
   # can be used as a placeholder for all extensions not explicitly named. 
@@ -67,7 +67,9 @@ Radiant::Initializer.run do |config|
   config.action_view.field_error_proc = Proc.new do |html, instance|
     %{<div class="error-with-field">#{html} <small class="error">&bull; #{[instance.error_message].flatten.first}</small></div>}
   end
-  
+
+  config.gem 'imagesize', :lib => 'image_size'
+
   config.after_initialize do
     # Add new inflection rules using the following format:
     ActiveSupport::Inflector.inflections do |inflect|
