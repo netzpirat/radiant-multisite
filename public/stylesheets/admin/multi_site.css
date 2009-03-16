@@ -1,0 +1,52 @@
+#content table.index tr.node td {
+  padding: .5em;
+}
+
+#content table.index .node .site small {
+  color: #666;
+  font-size: 90%;
+  font-style: italic;
+  font-weight: normal;
+  margin-left: .5em;
+}
+
+#content table.index .node .site a, #content table.index .node .site a:visited {
+  font-size: 115%;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+#content .form-area p.domain {
+  float: left;
+  width: 40%;
+  margin: 1em 1em 0 0;
+  overflow: hidden;
+}
+
+#content .form-area p.subtitle {
+  margin: 1em 0 0 0;
+}
+
+#content .form-area p.domain label, #content .form-area p.homepage label {
+  display: block;
+  position: relative;
+}
+
+#content div.form-area p.domain .textbox, #content div.form-area p.homepage .textbox, #content div.form-area p.subtitle .textbox, #content div.form-area p.subtitle select {
+  font-family: Georgia,Palatino,"Times New Roman",Times,serif;
+  font-size: 140%;
+  width: 100%;
+}
+
+#content div.form-area p.homepage {
+  float: right;
+  width: 16%;
+  margin: 1em 0 0 0;
+  overflow: hidden;
+}
+
+p.formnote {
+  clear: both;
+  padding: 2em 0;
+}

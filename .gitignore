@@ -7,3 +7,4 @@ cache/[^.]*
 config/database.yml
 nbproject
 .idea
+text_asset_cache
