@@ -43,9 +43,6 @@
 [submodule "vendor/extensions/paperclipped_multisite"]
 	path = vendor/extensions/paperclipped_multisite
 	url = git@github.com:netzpirat/radiant-paperclipped-multisite-extension.git
-[submodule "vendor/extensions/upload_manager"]
-	path = vendor/extensions/upload_manager
-	url = git@github.com:netzpirat/radiant-upload-manager-extension.git
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git@github.com:netzpirat/radiant-paperclipped-extension.git
