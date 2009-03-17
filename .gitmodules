@@ -102,7 +102,7 @@
 	url = git://github.com/mislav/will_paginate.git
 [submodule "vendor/extensions/paginate"]
 	path = vendor/extensions/paginate
-	url = git://github.com/saturnflyer/radiant-paginate-extension.git
+	url = git@github.com:netzpirat/radiant-paginate-extension.git
 [submodule "vendor/extensions/change_author"]
 	path = vendor/extensions/change_author
 	url = git://github.com/saturnflyer/radiant-change_author-extension.git
