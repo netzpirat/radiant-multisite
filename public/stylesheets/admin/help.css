@@ -1,0 +1,25 @@
+#help_introduction {
+	background: #cfc;
+	border: 1px solid #9c9;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.help_tip {
+	position: relative;
+	background: #ff9;
+	border: 1px solid #fd9;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.help_tip_controls {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 0.8em;
+	padding: 3px 5px;
+	background: #fd9;
+	color: #c73;
+}
+	.help_tip_controls a {
+		color: #c73;
+	}

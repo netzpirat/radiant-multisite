@@ -115,3 +115,6 @@
 [submodule "vendor/extensions/help_inline"]
 	path = vendor/extensions/help_inline
 	url = git://github.com/saturnflyer/radiant-help_inline-extension.git
+[submodule "vendor/extensions/application_theme"]
+	path = vendor/extensions/application_theme
+	url = git://github.com/saturnflyer/radiant-application_theme-extension.git
