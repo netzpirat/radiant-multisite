@@ -115,3 +115,6 @@
 [submodule "vendor/extensions/application_theme"]
 	path = vendor/extensions/application_theme
 	url = git://github.com/saturnflyer/radiant-application_theme-extension.git
+[submodule "vendor/extensions/sns_multisite"]
+	path = vendor/extensions/sns_multisite
+	url = git@github.com:netzpirat/radiant-sns-multisite-extension.git
