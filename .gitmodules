@@ -118,3 +118,6 @@
 [submodule "vendor/extensions/sns_multisite"]
 	path = vendor/extensions/sns_multisite
 	url = git@github.com:netzpirat/radiant-sns-multisite-extension.git
+[submodule "vendor/extensions/reorder"]
+	path = vendor/extensions/reorder
+	url = git://github.com/radiant/radiant-reorder-extension.git
