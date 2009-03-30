@@ -1,0 +1,43 @@
+Radiant
+-------
+
+* I18N
+
+Pages
+-----
+
+* Fix opening of child pages
+* Fix broken reorder in the frontend
+* Restrict slug to site and not in general
+
+SnS
+---
+
+* Fix broken specs
+* Add compass framework to sass filter
+* Integrate paperclipped assets in sass filter
+* Enable sass variables
+
+Gallery
+-------
+
+* Support multi site
+
+Dav
+---
+
+* Support multi site
+* Support sass filter extension
+* Support paperclipped. Access assets and attach to pages (by dropping into a page)
+* Support galleries
+
+WymEditor
+---------
+
+* Html beautify fix: Some elements like a,p,h1 shoud not indent content)
+* WymEditor fix popups under the WymEditor toolbar
+* Remove WymEditor logo instead of hide in the CSS (One request less)
+* Support <r:assets/> in WYMeditor
+* Add some more common classes (float left, float right, clear float)
+* Add Compass classes
+* Assign different editor colors to classes, A class should have a little square in front with its assigned color
