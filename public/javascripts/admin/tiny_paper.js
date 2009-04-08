@@ -2,8 +2,14 @@ var assetBrowser = {
   init: function() {
     $$('#tp_assets a').each(function (s) {
       Event.observe(s, 'click', function () {
+        $$('span.tp_image_sizes').each(function (sp) {
+          sp.hide();
+        });
         if ($('type').value == 'images' ) {
-          assetBrowser.submit_image(this);
+          var span = this.down('span.tp_image_sizes');
+          if (span) {
+            span.show();
+          }
           return false; 
         }
         if ($('type').value == 'files' || $('type').value == 'pages' ) {
@@ -11,6 +17,11 @@ var assetBrowser = {
           return false; 
         }
       });
+    });
+    $$("#tp_sizes a").each(function (s) {
+      Event.observe(s, 'click', function () {
+        assetBrowser.submit_image(this);
+      })
     });
   },
 
@@ -29,7 +40,7 @@ var assetBrowser = {
     var win = tinyMCEPopup.getWindowArg("window");
     
     win.document.getElementById(tinyMCEPopup.getWindowArg("input")).value = href;
-    
+
     tinyMCEPopup.close();
   }
 };
@@ -38,12 +49,17 @@ document.observe("dom:loaded", function() {
   tinyMCEPopup.onInit.add(assetBrowser.init, assetBrowser);
   if ( $('title') && ($("title").value != null && $("title").value.length != 0)) {
     $("reset").show();
-  }
+  };
   if ($('sort_order')) {
     Event.observe('sort_order', 'change', function () {
       $("tp_sort").submit();
     }) 
-  }
+  };
+  if ($('view_mode')) {
+    Event.observe('view_mode', 'change', function () {
+      $("tp_view_mode").submit();
+    }) 
+  };
 });
 
 function when_starting () {
@@ -56,10 +72,19 @@ function when_completing () {
   $$('#tp_assets a').each(function (s) {
     s.stopObserving('click');
   });
+  $$('#tp_sizes a').each(function (s) {
+    s.stopObserving('click');
+  });
   $$('#tp_assets a').each(function (s) {
     Event.observe(s, 'click', function () {
+      $$('span.tp_image_sizes').each(function (sp) {
+        sp.hide();
+      });
       if ($('type').value == 'images' ) {
-        assetBrowser.submit_image(this);
+        var span = this.down('span.tp_image_sizes');
+        if (span) {
+          span.show();
+        }
         return false; 
       }
       if ($('type').value == 'files' || $('type').value == 'pages' ) {
@@ -68,10 +93,21 @@ function when_completing () {
       }
     });
   });
-  if ($("sort_order")){
+  $$("#tp_sizes a").each(function (s) {
+    Event.observe(s, 'click', function () {
+      assetBrowser.submit_image(this);
+    })
+  });
+  if ($("sort_order")) {
     $("sort_order").stopObserving('change');
     Event.observe('sort_order', 'change', function () {
       $("tp_sort").submit();
-    }) 
+    })
+  }
+  if ($("view_mode")) {
+    $("view_mode").stopObserving('change');
+    Event.observe('view_mode', 'change', function () {
+      $("tp_view_mode").submit();
+    })
   }
 }
