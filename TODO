@@ -1,7 +1,6 @@
-Reorder
--------
-
-* Fix reorder
+Dashboard
+---------
+* Fix dashboard
 
 Help
 ----
@@ -11,14 +10,11 @@ Help
 Pages
 -----
 
-* Fix opening of child pages
-* Fix broken reorder in the frontend
 * Restrict slug to site and not in general
 
 SnS
 ---
 
-* Fix broken specs
 * Add compass framework to sass filter
 * Integrate paperclipped assets in sass filter
 * Enable sass variables
@@ -26,7 +22,7 @@ SnS
 Gallery
 -------
 
-* Support multi site
+* Site change
 
 Dav
 ---
@@ -39,6 +35,7 @@ Dav
 WymEditor
 ---------
 
+* Fix broken paperclipped file update with Wym
 * Html beautify fix: Some elements like a,p,h1 shoud not indent content)
 * WymEditor fix popups under the WymEditor toolbar
 * Remove WymEditor logo instead of hide in the CSS (One request less)
