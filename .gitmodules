@@ -133,3 +133,6 @@
 [submodule "vendor/plugins/exceptional"]
 	path = vendor/plugins/exceptional
 	url = git://github.com/contrast/exceptional.git
+[submodule "vendor/extensions/sibling_atgs"]
+	path = vendor/extensions/sibling_atgs
+	url = git://github.com/nelstrom/radiant-sibling-tags-extension.git
