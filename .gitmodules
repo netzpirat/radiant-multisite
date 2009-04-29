@@ -127,3 +127,6 @@
 [submodule "vendor/extensions/seo_help"]
 	path = vendor/extensions/seo_help
 	url = git://github.com/saturnflyer/radiant-seo_help-extension.git
+[submodule "vendor/plugins/rpm"]
+	path = vendor/plugins/rpm
+	url = git://github.com/newrelic/rpm.git
