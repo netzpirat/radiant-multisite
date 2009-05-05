@@ -24,7 +24,7 @@ function style_html(html_source, indent_size, indent_character, max_char) {
   function Parser() {
 
     this.pos = 0; //Parser position
-    this.token = this.tag = this.last_tag = '';
+    this.token = '';
     this.current_mode = 'CONTENT'; //reflects the current Parser mode: TAG/CONTENT
     this.tags = { //An object to hold tags, their position, and their parent-tags, initiated with default values
       parent: 'parent1',
@@ -39,7 +39,6 @@ function style_html(html_source, indent_size, indent_character, max_char) {
       whitespace: "\n\r\t ".split(''),
       single_token: 'br,input,link,meta,!doctype,basefont,base,area,hr,wbr,param,img,isindex,?xml,embed'.split(','), //all the single tags for HTML
       extra_liners: 'head,body,/html'.split(','), //for tags that need a line of whitespace before them
-      nobreak_elements: 'h1,h2,h3,h4,h5,h6,span,a,abbr,acronym,b,bdo,big,br,cite,code,del,dfn,em,font,i,ins,kbd,samp,small,strike,strong,sub,sup,tt,u,q,var'.split(','),
       in_array: function (what, arr) {
         for (var i=0; i<arr.length; i++) {
           if (what === arr[i]) {
@@ -253,7 +252,6 @@ function style_html(html_source, indent_size, indent_character, max_char) {
           this.print_newline(true, this.output);
         }
       }
-      this.tag = tag_check.indexOf("/") != -1 ? tag_check.substring(1) : tag_check;
       return content.join(''); //returns fully formatted tag
     }
 
@@ -396,49 +394,32 @@ function style_html(html_source, indent_size, indent_character, max_char) {
       break;
     }
 
-    var nobreak = multi_parser.Utils.in_array(multi_parser.tag, multi_parser.Utils.nobreak_elements);
-    var last_nobreak = multi_parser.Utils.in_array(multi_parser.last_tag, multi_parser.Utils.nobreak_elements);
 
     switch (multi_parser.token_type) {
-      case 'TK_TAG_SCRIPT': case 'TK_TAG_STYLE':
+      case 'TK_TAG_START': case 'TK_TAG_SCRIPT': case 'TK_TAG_STYLE':
         multi_parser.print_newline(false, multi_parser.output);
         multi_parser.print_token(multi_parser.token_text);
         multi_parser.indent();
         multi_parser.current_mode = 'CONTENT';
         break;
-      case 'TK_TAG_START':
-        if (!nobreak) {
-           multi_parser.print_newline(false, multi_parser.output);
-        }
-        multi_parser.print_token(multi_parser.token_text);
-        multi_parser.indent();
-        multi_parser.current_mode = 'CONTENT';
-        break;
       case 'TK_TAG_END':
-        if (!nobreak) {
-           multi_parser.print_newline(true, multi_parser.output);
-        }
+        multi_parser.print_newline(true, multi_parser.output);
         multi_parser.print_token(multi_parser.token_text);
         multi_parser.current_mode = 'CONTENT';
         break;
       case 'TK_TAG_SINGLE':
-        if (!nobreak) {
-           multi_parser.print_newline(false, multi_parser.output);
-        }
+        multi_parser.print_newline(false, multi_parser.output);
         multi_parser.print_token(multi_parser.token_text);
         multi_parser.current_mode = 'CONTENT';
         break;
       case 'TK_CONTENT':
         if (multi_parser.token_text !== '') {
-          if (!nobreak) {
-             multi_parser.print_newline(false, multi_parser.output);
-          }
+          multi_parser.print_newline(false, multi_parser.output);
           multi_parser.print_token(multi_parser.token_text);
         }
         multi_parser.current_mode = 'TAG';
         break;
     }
-    multi_parser.last_tag = multi_parser.tag;
     multi_parser.last_token = multi_parser.token_type;
     multi_parser.last_text = multi_parser.token_text;
   }

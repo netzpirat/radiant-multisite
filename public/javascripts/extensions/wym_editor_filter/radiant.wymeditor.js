@@ -383,7 +383,7 @@ function unboot_wym(elem){
   // <r:assets:image title="foo" /> (but must keep image resizing from the visual editor)
 
   // update textarea content
-  elem.value = style_html(content, 2, ' ', 160);
+  elem.value = style_html(content);
 
   // show textarea again
   jQuery(elem).show();
