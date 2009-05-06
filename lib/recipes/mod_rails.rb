@@ -1,4 +1,4 @@
-namespace :webistrano do
+namespace :apache do
   namespace :mod_rails do
     desc "start mod_rails & Apache"
     task :start, :roles => :app, :except => { :no_release => true } do
@@ -23,14 +23,14 @@ end
 
 namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
-    webistrano.mod_rails.restart
+    apache.mod_rails.restart
   end
 
   task :start, :roles => :app, :except => { :no_release => true } do
-    webistrano.mod_rails.start
+    apache.mod_rails.start
   end
 
   task :stop, :roles => :app, :except => { :no_release => true } do
-    webistrano.mod_rails.stop
+    apache.mod_rails.stop
   end
 end
