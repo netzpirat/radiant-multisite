@@ -91,9 +91,6 @@
 [submodule "vendor/extensions/sns_sass_filter"]
 	path = vendor/extensions/sns_sass_filter
 	url = git@github.com:netzpirat/radiant-sns-sass-filter-extension.git
-[submodule "vendor/extensions/tiny_paper"]
-	path = vendor/extensions/tiny_paper
-	url = git://github.com/Aissac/radiant-tiny-paper-extension.git
 [submodule "vendor/plugins/will_paginate"]
 	path = vendor/plugins/will_paginate
 	url = git://github.com/mislav/will_paginate.git
