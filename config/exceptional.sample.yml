@@ -1,7 +1,7 @@
 # here are the settings that are common to all environments
 common: &default_settings
   # You must specify your Exceptional API key here.
-  api-key: 72c5e61705e7eef683a8e87e270f9e188289137a
+  api-key: 
   # Exceptional creates a separate log file from your application's logs
   # available levels are debug, info, warn, error, fatal
   log-level: info

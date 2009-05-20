@@ -5,6 +5,8 @@ doc/api
 doc/app
 cache/[^.]*
 config/database.yml
+config/excpetional.yml
+config/newrelic.yml
 nbproject
 .idea
 text_asset_cache

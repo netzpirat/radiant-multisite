@@ -1,0 +1,21 @@
+base: &base
+  adapter: mysql
+  host: 127.0.0.1
+  username: extranett
+  password: 
+
+development:
+  database: extranett_development
+  <<: *base
+
+test:
+  database: extranett_test
+  <<: *base
+
+staging:
+  database: extranett_staging
+  <<: *base
+    
+production:
+  database: extranett_production
+  <<: *base
