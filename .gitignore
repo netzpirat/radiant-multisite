@@ -5,7 +5,7 @@ doc/api
 doc/app
 cache/[^.]*
 config/database.yml
-config/excpetional.yml
+config/exceptional.yml
 config/newrelic.yml
 nbproject
 .idea
