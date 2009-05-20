@@ -1,53 +1,105 @@
 ---
 - name: admin_breadcrumbs
   hub: netzpirat
+  - remote: saturnflyer/radiant-admin_breadcrumbs-extension
+- name: application_theme
+  hub: saturnflyer
 - name: blog
+  hub: netzpirat
+  - remote: saturnflyer/radiant-blog-extension
+- name: change_author
+  hub: saturnflyer
+- name: comments
   hub: netzpirat
 - name: conditional_tags
   hub: netzpirat
+  - remote: SwankInnovations/radiant-conditional-tags-extension
 - name: copy_move
   hub: netzpirat
+  - remote: pilu/radiant-copy-move
 - name: dashboard
   hub: netzpirat
+  - remote: saturnflyer/radiant-dashboard-extension
 - name: dav
   hub: netzpirat
-- name: drag_order
-  hub: netzpirat
+  - remote: willcodeforfoo/radiant-dav-extension
 - name: gallery
+  hub: netzpirat
+  - remote: pilu/radiant-gallery
+- name: gallery_multisite
   hub: netzpirat
 - name: help
   hub: netzpirat
+  - remote: saturnflyer/radiant-help-extension
 - name: import_export
   hub: netzpirat
+  - remote: radiant/radiant-import-export-extension
 - name: index_page
   hub: netzpirat
+  - remote: jomz/radiant-index-page-extension
 - name: multi_site
   hub: netzpirat
+  - remote: spanner/radiant-multi-site-extension
 - name: navigation_tags
   hub: netzpirat
+  - remote: derencius/navigation_tags
 - name: page_preview
   hub: netzpirat
+  - remote: vigetlabs/radiant_page_preview_extension
+  - remote: saturnflyer/radiant_page_preview_extension
+  - remote: whistlerbrk/radiant-page-preview-extension
+- name: paginate
+  hub: netzpirat
+  - remote: saturnflyer/radiant-paginate-extension
 - name: paperclipped
   hub: netzpirat
+  - remote: Aissac/paperclipped
+  - remote: spanner/paperclipped
 - name: paperclipped_multisite
   hub: netzpirat
 - name: ray
   hub: netzpirat
+  - remote: johnmuhl/radiant-ray-extension
 - name: scoped_admin
   hub: netzpirat
+  - remote: spanner/radiant-scoped-admin-extension
 - name: search
   hub: netzpirat
+  - remote: radiant/radiant-search-extension
 - name: search_multi_site
   hub: netzpirat
+  - remote: RSpace/radiant-search_multi_site-extension
+- name: seo_help
+  hub: saturnflyer
 - name: settings
   hub: netzpirat
+  - remote: Squeegy/radiant-settings
 - name: share_layouts
   hub: netzpirat
+  - remote: radiant/radiant-share-layouts-extension
+- name: sibling_tags
+  hub: nelstrom
+- name: site_watcher
+  hub: netzpirat
+  - remote: saturnflyer/radiant-site_watcher-extension
 - name: sns
+  hub: netzpirat
+  - remote: SwankInnovations/radiant-sns-extension
+  - remote: trejkaz/radiant-sns-extension
+  - remote: MrGossett/radiant-sns-extension
+  - remote: eostrom/radiant-sns-extension
+- name: sns_minifier
+  hub: netzpirat
+  - remote: patrickberkeley/radiant-sns-minifier-extension
+- name: sns_multisite
+  hub: netzpirat
+- name: sns_sass_filter
   hub: netzpirat
 - name: tags
   hub: netzpirat
-- name: tags_multi_site
+  - remote: jomz/radiant-tags-extension
+- name: wordpress_migrator
   hub: netzpirat
 - name: wym_editor_filter
   hub: netzpirat
+  - remote: jomz/wymeditor-for-radiant
