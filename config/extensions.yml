@@ -1,105 +1,141 @@
 ---
 - name: admin_breadcrumbs
   hub: netzpirat
-  - remote: saturnflyer/radiant-admin_breadcrumbs-extension
+  remotes:
+    - saturnflyer
 - name: application_theme
   hub: saturnflyer
+  remotes:
 - name: blog
   hub: netzpirat
-  - remote: saturnflyer/radiant-blog-extension
+  remotes:
+    - saturnflyer
 - name: change_author
   hub: saturnflyer
+  remotes:
 - name: comments
   hub: netzpirat
+  remotes:
 - name: conditional_tags
   hub: netzpirat
-  - remote: SwankInnovations/radiant-conditional-tags-extension
+  remotes:
+    - SwankInnovations
 - name: copy_move
   hub: netzpirat
-  - remote: pilu/radiant-copy-move
+  remotes:
+    - pilu
 - name: dashboard
   hub: netzpirat
-  - remote: saturnflyer/radiant-dashboard-extension
+  remotes:
+    - saturnflyer
 - name: dav
   hub: netzpirat
-  - remote: willcodeforfoo/radiant-dav-extension
+  remotes:
+    - willcodeforfoo
 - name: gallery
   hub: netzpirat
-  - remote: pilu/radiant-gallery
+  remotes:
+    - pilu
 - name: gallery_multisite
   hub: netzpirat
+  remotes:
 - name: help
   hub: netzpirat
-  - remote: saturnflyer/radiant-help-extension
+  remotes:
+    - saturnflyer
 - name: import_export
   hub: netzpirat
-  - remote: radiant/radiant-import-export-extension
+  remotes:
+    - radiant
 - name: index_page
   hub: netzpirat
-  - remote: jomz/radiant-index-page-extension
+  remotes:
+    - jomz
 - name: multi_site
   hub: netzpirat
-  - remote: spanner/radiant-multi-site-extension
+  remotes:
+    - spanner
 - name: navigation_tags
   hub: netzpirat
-  - remote: derencius/navigation_tags
+  remotes:
+    - derencius
 - name: page_preview
   hub: netzpirat
-  - remote: vigetlabs/radiant_page_preview_extension
-  - remote: saturnflyer/radiant_page_preview_extension
-  - remote: whistlerbrk/radiant-page-preview-extension
+  remotes:
+    - vigetlabs
+    - saturnflyer
+    - whistlerbrk
 - name: paginate
   hub: netzpirat
-  - remote: saturnflyer/radiant-paginate-extension
+  remotes:
+    - saturnflyer
 - name: paperclipped
   hub: netzpirat
-  - remote: Aissac/paperclipped
-  - remote: spanner/paperclipped
+  remotes:
+    - Aissac
+    - spanner
 - name: paperclipped_multisite
   hub: netzpirat
+  remotes:
 - name: ray
   hub: netzpirat
-  - remote: johnmuhl/radiant-ray-extension
+  remotes:
+    - johnmuhl
 - name: scoped_admin
   hub: netzpirat
-  - remote: spanner/radiant-scoped-admin-extension
+  remotes:
+    - spanner
 - name: search
   hub: netzpirat
-  - remote: radiant/radiant-search-extension
+  remotes:
+    - radiant
 - name: search_multi_site
   hub: netzpirat
-  - remote: RSpace/radiant-search_multi_site-extension
+  remotes:
+    - RSpace
 - name: seo_help
   hub: saturnflyer
+  remotes:
 - name: settings
   hub: netzpirat
-  - remote: Squeegy/radiant-settings
+  remotes:
+    - Squeegy
 - name: share_layouts
   hub: netzpirat
-  - remote: radiant/radiant-share-layouts-extension
+  remotes:
+    - radiant
 - name: sibling_tags
   hub: nelstrom
+  remotes:
 - name: site_watcher
   hub: netzpirat
-  - remote: saturnflyer/radiant-site_watcher-extension
+  remotes:
+    - saturnflyer
 - name: sns
   hub: netzpirat
-  - remote: SwankInnovations/radiant-sns-extension
-  - remote: trejkaz/radiant-sns-extension
-  - remote: MrGossett/radiant-sns-extension
-  - remote: eostrom/radiant-sns-extension
+  remotes:
+    - SwankInnovations
+    - trejkaz
+    - MrGossett
+    - eostrom
 - name: sns_minifier
   hub: netzpirat
-  - remote: patrickberkeley/radiant-sns-minifier-extension
+  remotes:
+    - patrickberkeley
 - name: sns_multisite
   hub: netzpirat
+  remotes:
 - name: sns_sass_filter
   hub: netzpirat
+  remotes:
 - name: tags
   hub: netzpirat
-  - remote: jomz/radiant-tags-extension
+  remotes:
+    - jomz
 - name: wordpress_migrator
   hub: netzpirat
+  remotes:
 - name: wym_editor_filter
   hub: netzpirat
-  - remote: jomz/wymeditor-for-radiant
+  remotes:
+    - jomz/wymeditor-for-radiant
