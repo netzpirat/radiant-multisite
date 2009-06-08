@@ -4,6 +4,7 @@ tmp/**/*
 doc/api
 doc/app
 cache/[^.]*
+config/deploy.rb
 config/database.yml
 config/exceptional.yml
 config/newrelic.yml
