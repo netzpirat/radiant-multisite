@@ -1,21 +1,21 @@
 base: &base
   adapter: mysql
   host: 127.0.0.1
-  username: extranett
+  username: radiant_multisite
   password: 
 
 development:
-  database: extranett_development
+  database: radiant_multisite_development
   <<: *base
 
 test:
-  database: extranett_test
+  database: radiant_multisite_test
   <<: *base
 
 staging:
-  database: extranett_staging
+  database: radiant_multisite_staging
   <<: *base
     
 production:
-  database: extranett_production
+  database: radiant_multisite_production
   <<: *base
