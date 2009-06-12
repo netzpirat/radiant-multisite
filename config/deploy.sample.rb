@@ -20,15 +20,15 @@ set :git_enable_submodules, 1    #comment for cap deploy:setup
 # ================================================================
 
 set :rails_env, "production"
-set :mod_rails_restart_file, "/var/www/www.radiant-multisite.org/current/tmp/restart.txt"
+set :mod_rails_restart_file, "/var/www/radiant-multisite/current/tmp/restart.txt"
 
 # ================================================================
 # SERVERS
 # ================================================================
 
-set :deploy_to, "/var/www/www.radiant-multisite.org"
+set :deploy_to, "/var/www/radiant-multisite"
 set :use_sudo, false
 
-role :web, "www.radiant-multisite.org"
-role :app, "www.radiant-multisite.org"
-role :db,  "www.radiant-multisite.org", :primary => true
+role :web, "www.your-radiant-multisite.com"
+role :app, "www.your-radiant-multisite.com"
+role :db,  "www.your-radiant-multisite.com", :primary => true
