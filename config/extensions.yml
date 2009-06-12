@@ -13,9 +13,6 @@
 - name: change_author
   hub: saturnflyer
   remotes:
-- name: comments
-  hub: netzpirat
-  remotes:
 - name: conditional_tags
   hub: netzpirat
   remotes:
@@ -128,14 +125,7 @@
 - name: sns_sass_filter
   hub: netzpirat
   remotes:
-- name: tags
-  hub: netzpirat
-  remotes:
-    - jomz
-- name: wordpress_migrator
-  hub: netzpirat
-  remotes:
 - name: wym_editor_filter
   hub: netzpirat
   remotes:
-    - jomz/wymeditor-for-radiant
+    - jomz
