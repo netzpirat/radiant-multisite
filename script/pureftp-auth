@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+ENV['RAILS_ENV']='production'
+require File.dirname(__FILE__) + '/../config/boot'
+require RAILS_ROOT + '/config/environment'
+require 'digest/sha1'
+
+FTP_ROOT = "/var/ftp/radiant-multisite"
+SYSTEM_USER = '33'
+SYSTEM_GROUP = '33'
+
+user = User.find_by_sql(["SELECT * FROM users WHERE login = ?", ENV['AUTHD_ACCOUNT']]).first
+if user && user.password == user.sha1(ENV['AUTHD_PASSWORD'])
+  if user.site
+    user_root = File.join FTP_ROOT, user.site.base_domain
+  else
+    user_root = FTP_ROOT
+  end
+  FileUtils.mkdir_p user_root
+  FileUtils.chown_R SYSTEM_USER, SYSTEM_GROUP, FTP_ROOT
+  output = <<-END
+auth_ok:1
+uid:#{SYSTEM_USER}
+gid:#{SYSTEM_GROUP}
+dir:#{user_root}
+user_quota_size:104857600
+user_quota_files:300
+end
+  END
+else
+  output = "auth_ok:0\n" + "end\n"
+end
+puts output
