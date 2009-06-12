@@ -7,11 +7,6 @@ Help
 
 * Fix developer and admin tab
 
-Pages
------
-
-* Restrict slug to site and not in general
-
 SnS
 ---
 
@@ -21,9 +16,8 @@ SnS
 
 Gallery
 -------
-
-* Site change
-* New Gallery is broken
+* Site change in list view
+* Add site change drop down for the admin when creating a new site
 
 Dav
 ---
