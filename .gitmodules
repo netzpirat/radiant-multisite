@@ -13,9 +13,6 @@
 [submodule "vendor/extensions/import_export"]
 	path = vendor/extensions/import_export
 	url = git@github.com:netzpirat/radiant-import-export-extension.git
-[submodule "vendor/extensions/multi_site"]
-	path = vendor/extensions/multi_site
-	url = git@github.com:netzpirat/radiant-multi-site-extension.git
 [submodule "vendor/extensions/settings"]
 	path = vendor/extensions/settings
 	url = git@github.com:netzpirat/radiant-settings-extension.git
@@ -25,9 +22,6 @@
 [submodule "vendor/extensions/navigation_tags"]
 	path = vendor/extensions/navigation_tags
 	url = git@github.com:netzpirat/radiant-navigation-tags-extension.git
-[submodule "vendor/extensions/share_layouts"]
-	path = vendor/extensions/share_layouts
-	url = git@github.com:netzpirat/radiant-share-layouts-extension.git
 [submodule "vendor/extensions/tags"]
 	path = vendor/extensions/tags
 	url = git@github.com:netzpirat/radiant-tags-extension.git
@@ -46,9 +40,6 @@
 [submodule "vendor/extensions/paperclipped"]
 	path = vendor/extensions/paperclipped
 	url = git@github.com:netzpirat/radiant-paperclipped-extension.git
-[submodule "vendor/extensions/sns"]
-	path = vendor/extensions/sns
-	url = git@github.com:netzpirat/radiant-sns-extension.git
 [submodule "vendor/extensions/search"]
 	path = vendor/extensions/search
 	url = git@github.com:netzpirat/radiant-search-extension.git
@@ -61,9 +52,6 @@
 [submodule "vendor/plugins/attachment_fu"]
 	path = vendor/plugins/attachment_fu
 	url = git://github.com/technoweenie/attachment_fu.git
-[submodule "vendor/extensions/page_preview"]
-	path = vendor/extensions/page_preview
-	url = git@github.com:netzpirat/radiant-page-preview-extension.git
 [submodule "vendor/radiant"]
 	path = vendor/radiant
 	url = git@github.com:netzpirat/radiant.git
@@ -106,15 +94,9 @@
 [submodule "vendor/extensions/help_inline"]
 	path = vendor/extensions/help_inline
 	url = git://github.com/saturnflyer/radiant-help_inline-extension.git
-[submodule "vendor/extensions/application_theme"]
-	path = vendor/extensions/application_theme
-	url = git://github.com/saturnflyer/radiant-application_theme-extension.git
 [submodule "vendor/extensions/sns_multisite"]
 	path = vendor/extensions/sns_multisite
 	url = git@github.com:netzpirat/radiant-sns-multisite-extension.git
-[submodule "vendor/extensions/reorder"]
-	path = vendor/extensions/reorder
-	url = git://github.com/radiant/radiant-reorder-extension.git
 [submodule "vendor/extensions/gallery_multisite"]
 	path = vendor/extensions/gallery_multisite
 	url = git@github.com:netzpirat/radiant-gallery-multisite-extension.git
@@ -130,3 +112,18 @@
 [submodule "vendor/extensions/sibling_tags"]
 	path = vendor/extensions/sibling_tags
 	url = git://github.com/nelstrom/radiant-sibling-tags-extension.git
+[submodule "vendor/extensions/reorder.git"]
+	path = vendor/extensions/reorder.git
+	url = git://github.com/radiant/radiant-reorder-extension.git
+[submodule "vendor/extensions/reorder"]
+	path = vendor/extensions/reorder
+	url = git://github.com/radiant/radiant-reorder-extension.git
+[submodule "vendor/extensions/sns"]
+	path = vendor/extensions/sns
+	url = git://github.com/netzpirat/radiant-sns-extension.git
+[submodule "vendor/extensions/page_preview"]
+	path = vendor/extensions/page_preview
+	url = git@github.com:netzpirat/radiant-page-preview-extension.git
+[submodule "vendor/extensions/multi_site"]
+	path = vendor/extensions/multi_site
+	url = git@github.com:netzpirat/radiant-multi-site-extension.git

@@ -21,7 +21,6 @@ config.whiny_nils    = true
 # Show full error reports and disable caching
 config.action_controller.consider_all_requests_local = true
 config.action_controller.perform_caching             = false
-ResponseCache.defaults[:perform_caching]             = false
 
 # Disable request forgery protection in test environment
 config.action_controller.allow_forgery_protection    = false
@@ -31,6 +30,6 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-# Make sure Rspec is in the load path
-config.load_paths << "#{RADIANT_ROOT}/vendor/plugins/rspec/lib"
-config.load_paths << "#{RADIANT_ROOT}/vendor/plugins/rspec_on_rails/lib"
+config.gem "rspec-rails", :version => "~>1.2.6", :lib => false
+config.gem "webrat", :version => "~>0.4.4", :lib => false
+config.gem "cucumber", :version => "~>0.3.9", :lib => false
