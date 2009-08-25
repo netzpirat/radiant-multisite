@@ -25,7 +25,7 @@ Radiant::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_radiant-multisite_session',
-    :secret      => '69efb51c0bdbacf1debae7a737af9121a47d6423'
+    :secret      => 'd54bc632b4c514415360be2a3c6cda884344bd4e'
   }
 
   # Comment out this line if you want to turn off all caching, or
@@ -58,7 +58,7 @@ Radiant::Initializer.run do |config|
   config.active_record.observers = [:user_action_observer, :gallery_observer]
 
   # Make Active Record use UTC-base instead of local time
-  config.time_zone = 'UTC'
+  config.active_record.default_timezone = :utc
 
   # Set the default field error proc
   config.action_view.field_error_proc = Proc.new do |html, instance|
@@ -70,7 +70,7 @@ Radiant::Initializer.run do |config|
   end
 
   config.gem 'imagesize', :lib => 'image_size'
-
+  
   config.after_initialize do
     # Add new inflection rules using the following format:
     ActiveSupport::Inflector.inflections do |inflect|

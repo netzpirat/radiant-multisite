@@ -1,5 +1,5 @@
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 21) do
+ActiveRecord::Schema.define(:version => 20081203140407) do
 
   create_table "assets", :force => true do |t|
     t.string   "caption"
@@ -22,6 +22,24 @@ ActiveRecord::Schema.define(:version => 21) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "author"
+    t.string   "author_url"
+    t.string   "author_email"
+    t.string   "author_ip"
+    t.text     "content"
+    t.text     "content_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filter_id",    :limit => 25
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.datetime "approved_at"
+    t.integer  "approved_by"
+    t.string   "mollom_id"
   end
 
   create_table "config", :force => true do |t|
@@ -52,6 +70,7 @@ ActiveRecord::Schema.define(:version => 21) do
     t.integer  "created_by"
     t.integer  "updated_by"
     t.integer  "position"
+    t.integer  "site_id"
   end
 
   create_table "gallery_importings", :force => true do |t|
@@ -102,10 +121,11 @@ ActiveRecord::Schema.define(:version => 21) do
   end
 
   create_table "meta_tags", :force => true do |t|
-    t.string "name", :null => false
+    t.string  "name",    :null => false
+    t.integer "site_id"
   end
 
-  add_index "meta_tags", ["name"], :name => "index_meta_tags_on_name", :unique => true
+  add_index "meta_tags", ["name", "site_id"], :name => "index_meta_tags_on_name_and_site_id", :unique => true
 
   create_table "page_attachments", :force => true do |t|
     t.integer "asset_id"
@@ -118,6 +138,17 @@ ActiveRecord::Schema.define(:version => 21) do
     t.string  "filter_id", :limit => 25
     t.text    "content"
     t.integer "page_id"
+  end
+
+  add_index "page_parts", ["page_id", "name"], :name => "parts_by_page"
+
+  create_table "page_requests", :force => true do |t|
+    t.string   "url"
+    t.boolean  "virtual",       :default => false
+    t.integer  "count_created", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "ignore",        :default => false
   end
 
   create_table "pages", :force => true do |t|
@@ -137,9 +168,15 @@ ActiveRecord::Schema.define(:version => 21) do
     t.integer  "lock_version",                   :default => 0
     t.string   "description"
     t.string   "keywords"
-    t.integer  "position"
     t.integer  "base_gallery_id"
+    t.boolean  "shortcut",                       :default => false
+    t.integer  "position"
   end
+
+  add_index "pages", ["class_name"], :name => "pages_class_name"
+  add_index "pages", ["parent_id"], :name => "pages_parent_id"
+  add_index "pages", ["slug", "parent_id"], :name => "pages_child_slug"
+  add_index "pages", ["virtual", "status_id"], :name => "pages_published"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id"
@@ -151,11 +188,16 @@ ActiveRecord::Schema.define(:version => 21) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "sites", :force => true do |t|
-    t.string  "name"
-    t.string  "domain"
-    t.integer "homepage_id"
-    t.integer "position",    :default => 0
-    t.string  "base_domain"
+    t.string   "name"
+    t.string   "domain"
+    t.integer  "homepage_id"
+    t.integer  "position",      :default => 0
+    t.string   "base_domain"
+    t.integer  "created_by_id"
+    t.datetime "created_at"
+    t.integer  "updated_by_id"
+    t.datetime "updated_at"
+    t.string   "subtitle"
   end
 
   create_table "snippets", :force => true do |t|
@@ -167,9 +209,10 @@ ActiveRecord::Schema.define(:version => 21) do
     t.integer  "created_by_id"
     t.integer  "updated_by_id"
     t.integer  "lock_version",                 :default => 0
+    t.integer  "site_id"
   end
 
-  add_index "snippets", ["name"], :name => "name", :unique => true
+  add_index "snippets", ["name", "site_id"], :name => "name", :unique => true
 
   create_table "taggings", :force => true do |t|
     t.integer "meta_tag_id",   :null => false
@@ -195,6 +238,8 @@ ActiveRecord::Schema.define(:version => 21) do
     t.integer  "updated_by_id"
     t.integer  "lock_version"
     t.string   "filter_id",     :limit => 25
+    t.boolean  "minify"
+    t.integer  "site_id"
   end
 
   create_table "users", :force => true do |t|
@@ -213,6 +258,10 @@ ActiveRecord::Schema.define(:version => 21) do
     t.string   "salt"
     t.string   "session_token"
     t.integer  "site_id"
+    t.text     "bio"
+    t.string   "bio_filter_id", :limit => 25
+    t.boolean  "needs_help",                   :default => true
+    t.string   "blog_location"
   end
 
   add_index "users", ["login"], :name => "login", :unique => true
