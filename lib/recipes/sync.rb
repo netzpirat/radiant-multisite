@@ -1,45 +1,197 @@
 require 'yaml'
 
+#
+# Capistrano sync.rb task for syncing databases and directories between the
+# local development environment and different multi_stage environments. You
+# cannot sync directly between two multi_stage environments, always use your
+# local machine as loop way.
+#
+# Author: Michael Kessler aka netzpirat
+# Gist:   111597
+# 
+# Released under the MIT license. 
+# Kindly sponsored by Screen Concept, www.screenconcept.ch
+#
 namespace :sync do
 
-  namespace :production do
+  after "deploy:setup", "sync:setup"
+  
+  desc <<-DESC
+    Creates the sync dir in shared path. The sync directory is used to keep
+    backups of database dumps and archives from synced directories. This task will
+    be called on 'deploy:setup'
+  DESC
+  task :setup do
+    run "cd #{shared_path}; mkdir sync"
+  end
 
-    desc 'Sync database and filesystem from production to local'
+  namespace :down do
+
+    desc <<-DESC
+      Syncs the database and declared directories from the selected multi_stage environment 
+      to the local development environment. This task simply calls both the 'sync:down:db' and 
+      'sync:down:fs' tasks.
+    DESC
     task :default do
       db and fs
     end
 
-    desc "Sync database from production to local"
+    desc <<-DESC
+      Syncs database from the selected mutli_stage environement to the local develoment environment.
+      The database credentials will be read from your local config/database.yml file and a copy of the
+      dump will be kept within the shared sync directory. The amount of backups that will be kept is
+      declared in the sync_backups variable and defaults to 5.
+    DESC
     task :db, :roles => :db, :only => { :primary => true } do
 
-      database = YAML::load_file('config/database.yml')
-      filename = "dump.#{Time.now.strftime '%Y-%m-%d_%H:%M:%S'}.sql"
+      filename = "database.#{stage}.#{Time.now.strftime '%Y-%m-%d_%H:%M:%S'}.sql"
+      on_rollback { delete "#{shared_path}/sync/#{filename}" }
 
-      on_rollback { delete "/tmp/#{filename}" }
-
-      run "mysqldump -u #{database['production']['username']} --password=#{database['production']['password']} #{database['production']['database']} > /tmp/#{filename}" do |channel, stream, data|
+      # Remote DB dump
+      username, password, database = database_config(stage)
+      run "mysqldump -u #{username} --password='#{password}' #{database} > #{shared_path}/sync/#{filename}" do |channel, stream, data|
         puts data
       end
+      purge_old_backups "database"
 
-      download "/tmp/#{filename}", filename
-      system "mysql -u #{database['development']['username']} --password=#{database['development']['password']} #{database['development']['database']} < #{filename}; rm -f #{filename}"
+      # Download dump
+      download "#{shared_path}/sync/#{filename}", filename
+
+      # Local DB import
+      username, password, database = database_config('development')
+      system "mysql -u #{username} --password='#{password}' #{database} < #{filename}; rm -f #{filename}"
       
-      logger.important "Sync database from production to local finished."
+      logger.important "sync database from the stage '#{stage}' to local finished"
     end
       
-    desc "Sync filesystem from production to local"
-    task :fs, :roles => :web do
-      database = YAML::load_file('config/database.yml')
-
-      logger.info "Sync paperclipped assets..."
-      system "rsync --archive --recursive --rsh=ssh --compress --human-readable #{database['production']['host']}:#{shared_path}/assets public/assets"
-
-      logger.info "Sync galleries..."
-      system "rsync --archive --recursive --rsh=ssh --compress --human-readable #{database['production']['host']}:#{shared_path}/galleries public/galleries"
-
-      logger.important "Sync filesystem from production to local finished"
+    desc <<-DESC
+      Sync declared shared directories from the selected multi_stage environment to the local development
+      environment. The synced directories must be declared as an array of Strings with the sync_directories 
+      variable and all entries will be prefixed with 'public'.
+    DESC
+    task :fs, :roles => :web, :once => true do
+      
+      server, port = host_and_port
+      
+      Array(fetch(:sync_directories, [])).each do |syncdir|
+        unless File.directory? "public/#{syncdir}"
+          logger.info "create local '#{syncdir}' folder"
+          Dir.mkdir "public/#{syncdir}"	  
+        end
+        logger.info "sync public/#{syncdir} from #{server}:#{port} to local"
+        system "rsync -e 'ssh -p #{port}' -avl --delete --stats #{server}:#{shared_path}/#{syncdir} public"
+      end
+      
+      logger.important "sync filesystem from the stage '#{stage}' to local finished"
     end
 
   end
 
+  namespace :up do
+
+    desc <<-DESC
+      Syncs the database and declared directories from the local development environment
+      to the selected multi_stage environment. This task simply calls both the 'sync:up:db' and 
+      'sync:up:fs' tasks.
+    DESC
+    task :default do
+      db and fs
+    end
+
+    desc <<-DESC
+      Syncs database from the local develoment environment to the selected mutli_stage environement.
+      The database credentials will be read from your local config/database.yml file and a copy of the
+      dump will be kept within the shared sync directory. The amount of backups that will be kept is
+      declared in the sync_backups variable and defaults to 5.
+    DESC
+    task :db, :roles => :db, :only => { :primary => true } do
+
+      filename = "database.#{stage}.#{Time.now.strftime '%Y-%m-%d_%H:%M:%S'}.sql"
+
+      on_rollback do
+        delete "#{shared_path}/sync/#{filename}"
+        system "rm -f #{filename}"
+      end
+
+      # Make a backup before importing
+      username, password, database = database_config(stage)
+      run "mysqldump -u #{username} --password='#{password}' #{database} > #{shared_path}/sync/#{filename}" do |channel, stream, data|
+        puts data
+      end
+
+      # Local DB export
+      filename = "dump.local.#{Time.now.strftime '%Y-%m-%d_%H:%M:%S'}.sql"
+      username, password, database = database_config('development')
+      system "mysqldump -u #{username} --password='#{password}' #{database} > #{filename}"
+      upload filename, "#{shared_path}/sync/#{filename}"
+      system "rm -f #{filename}"
+      
+      # Remote DB import
+      username, password, database = database_config(stage)
+      run "mysql -u #{username} --password='#{password}' #{database} < #{shared_path}/sync/#{filename}; rm -f #{shared_path}/sync/#{filename}"
+      purge_old_backups "database"
+
+      logger.important "sync database from local to the stage '#{stage}' finished"
+    end
+      
+    desc <<-DESC
+      Sync declared shared directories from the local development environement to the selected multi_stage
+      environment. The synced directories must be declared as an array of Strings with the sync_directories 
+      variable and all entries will be prefixed with 'public'.
+    DESC
+    task :fs, :roles => :web, :once => true do
+      
+      server, port = host_and_port
+      Array(fetch(:sync_directories, [])).each do |syncdir|
+        if File.directory? "public/#{syncdir}"
+          # Make a backup
+          logger.info "backup #{syncdir}"
+          run "tar cf #{shared_path}/sync/#{syncdir}.#{Time.now.strftime '%Y-%m-%d_%H:%M:%S'}.tar #{shared_path}/#{syncdir}"
+          purge_old_backups "#{syncdir}"
+        else
+          logger.info "Create shared '#{syncdir}' directory"
+          run "mkdir #{shared_path}/#{syncdir}"
+        end
+          
+        # Sync directory up
+        logger.info "sync public/#{syncdir} to #{server}:#{port} from local"
+        system "rsync -avlze 'ssh -p #{port}' public/#{syncdir} #{server}:#{shared_path}"
+      end
+      logger.important "sync filesystem from local to the stage '#{stage}' finished"
+    end
+          
+  end
+  
+  #
+  # Reads the database credentials from the local config/database.yml file
+  # +db+ the name of the environment to get the credentials for
+  # Returns username, password, database
+  #
+  def database_config(db)
+    database = YAML::load_file('config/database.yml')
+    return database["#{db}"]['username'], database["#{db}"]['password'], database["#{db}"]['database']
+  end
+  
+  #
+  # Returns the actual host name to sync and port
+  #
+  def host_and_port
+    return roles[:web].servers.first.host, ssh_options[:port] || roles[:web].servers.first.port || 22
+  end
+  
+  #
+  # Purge old backups within the shared sync directory
+  #
+  def purge_old_backups(base)
+    count = fetch(:sync_backups, 5).to_i
+    backup_files = capture("ls -xt #{shared_path}/sync/#{base}*").split.reverse
+    if count >= backup_files.length
+      logger.important "no old backups to clean up"
+    else
+      logger.info "keeping #{count} of #{backup_files.length} sync backups"
+      delete_backups = (backup_files - backup_files.last(count)).join(" ")
+      try_sudo "rm -rf #{delete_backups}"
+    end
+  end
+  
 end

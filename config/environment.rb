@@ -70,6 +70,8 @@ Radiant::Initializer.run do |config|
     end
   end
 
+  config.gem 'unicode'
+  config.gem 'mime-types'
   config.gem 'imagesize',            :lib => 'image_size'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem 'newrelic-rpm',         :lib => 'rpm',           :source => 'http://gems.github.com'
