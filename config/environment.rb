@@ -1,4 +1,5 @@
 # Be sure to restart your server when you modify this file
+RADIANT_GEM_VERSION = '0.8.1'
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
@@ -69,7 +70,10 @@ Radiant::Initializer.run do |config|
     end
   end
 
-  config.gem 'imagesize', :lib => 'image_size'
+  config.gem 'imagesize',            :lib => 'image_size'
+  config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+  config.gem 'newrelic-rpm',         :lib => 'rpm',           :source => 'http://gems.github.com'
+  config.gem 'contrast-exceptional', :lib => 'exceptional',   :source => 'http://gems.github.com'
   
   config.after_initialize do
     # Add new inflection rules using the following format:
