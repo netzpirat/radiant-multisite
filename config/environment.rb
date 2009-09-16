@@ -73,6 +73,7 @@ Radiant::Initializer.run do |config|
   config.gem 'unicode'
   config.gem 'capistrano'
   config.gem 'newrelic_rpm'
+  config.gem 'sanitize'
   config.gem 'capistrano-ext',			:lib => false
   config.gem 'mime-types',			:lib => false
   config.gem 'morhekil-capistrano-deepmodules', :lib => false
