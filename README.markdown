@@ -103,10 +103,12 @@ Deployment
 
 Deploy me with Capistrano! I'm cooking with these recipes:
 
+* assets.rb - Creates and symlinks the paperclipped extensions public asset folder
+* config.rb - Create and symlink database.yml, exceptional.yml and newrelic.yml configuration files
+* galleries.rb - Creates and symlinks the gallery extensions public galleries folder
+* passenger.rb - Handles start, stop and restart of Apache and Passenger
 * radiant.rb - Handles the bootstrap and extension migration for Radiant
-* configs.rb - Handles database, exceptional and rpm configuration
-* mod_rails.rb - Handles start, stop adn restart of Apache and Passenger aka. mod_rails 
-* [sync.rb](http://gist.github.com/111597) - Handles synchronisation of different asset folders and a MySql database
+* [sync.rb](http://gist.github.com/111597) - Handles synchronisation of different folders and the MySql database
 
 First you have to copy the general deploy definition sample file from `conf/deploy.sample.rb` to `conf/deploy.rb` and the production configuration sample file from `conf/deploy/production.sample.rb` to `conf/deploy/production.rb` and modifiy those settings to your server environment. You can easily add new deployment target by copy the production sample file to for example `conf/staging.rb`
 

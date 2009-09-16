@@ -3,7 +3,7 @@
 # ================================================================
 
 set :rails_env, "production"
-set :mod_rails_restart_file, "/var/www/radiant-multisite/current/tmp/restart.txt"
+set :passenger_restart_file, "/var/www/radiant-multisite/current/tmp/restart.txt"
 
 # ================================================================
 # SERVERS
