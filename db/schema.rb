@@ -24,6 +24,24 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "site_id"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "author"
+    t.string   "author_url"
+    t.string   "author_email"
+    t.string   "author_ip"
+    t.text     "content"
+    t.text     "content_html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "filter_id",    :limit => 25
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.datetime "approved_at"
+    t.integer  "approved_by"
+    t.string   "mollom_id"
+  end
+
   create_table "config", :force => true do |t|
     t.string "key",         :limit => 40, :default => "", :null => false
     t.string "value",                     :default => ""
@@ -53,6 +71,11 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "updated_by"
     t.integer  "position"
     t.integer  "site_id"
+  end
+
+  create_table "galleries_keywords", :id => false, :force => true do |t|
+    t.integer "gallery_id"
+    t.integer "keyword_id"
   end
 
   create_table "gallery_importings", :force => true do |t|
@@ -88,6 +111,17 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.string   "thumbnail"
     t.integer  "created_by"
     t.integer  "updated_by"
+  end
+
+  create_table "gallery_items_keywords", :id => false, :force => true do |t|
+    t.integer "gallery_item_id"
+    t.integer "keyword_id"
+  end
+
+  create_table "gallery_keywords", :force => true do |t|
+    t.string   "keyword"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "layouts", :force => true do |t|
@@ -153,6 +187,8 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "base_gallery_id"
     t.boolean  "shortcut",                       :default => false
     t.integer  "position"
+    t.boolean  "enable_comments"
+    t.integer  "comments_count",                 :default => 0
   end
 
   add_index "pages", ["class_name"], :name => "pages_class_name"
@@ -180,6 +216,7 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "updated_by_id"
     t.datetime "updated_at"
     t.string   "subtitle"
+    t.string   "abbreviation"
   end
 
   create_table "snippets", :force => true do |t|
