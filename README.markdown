@@ -78,8 +78,8 @@ Get the code:
 
 Get the extensions and plugins:
 	
-	git submodules init
-	git submodules update
+	git submodules update --init
+	git submodule foreach git submodule update --init
 
 Install the needed gems:
 	
