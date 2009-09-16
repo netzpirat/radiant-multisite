@@ -24,24 +24,6 @@ ActiveRecord::Schema.define(:version => 20081203140407) do
     t.integer  "site_id"
   end
 
-  create_table "comments", :force => true do |t|
-    t.integer  "page_id"
-    t.string   "author"
-    t.string   "author_url"
-    t.string   "author_email"
-    t.string   "author_ip"
-    t.text     "content"
-    t.text     "content_html"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "filter_id",    :limit => 25
-    t.string   "user_agent"
-    t.string   "referrer"
-    t.datetime "approved_at"
-    t.integer  "approved_by"
-    t.string   "mollom_id"
-  end
-
   create_table "config", :force => true do |t|
     t.string "key",         :limit => 40, :default => "", :null => false
     t.string "value",                     :default => ""
