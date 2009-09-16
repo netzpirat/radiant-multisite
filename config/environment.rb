@@ -26,11 +26,11 @@ Radiant::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_radiant-multisite_session',
-    :secret      => 'd54bc632b4c514415360be2a3c6cda884344bd4e'
+    :secret      => 'f799f262d782e1387830cfbf1aa05c4150af6d2b'
   }
 
   # Comment out this line if you want to turn off all caching, or
-  # add options to modify the behavior. In the majority of deployment 
+  # add options to modify the behavior. In the majority of deployment
   # scenarios it is desirable to leave Radiant's cache enabled and in
   # the default configuration.
   #
@@ -39,13 +39,13 @@ Radiant::Initializer.run do |config|
   #    Turns on X-Sendfile support for Apache with mod_xsendfile or lighttpd.
   #  :use_x_accel_redirect => '/some/virtual/path'
   #    Turns on X-Accel-Redirect support for nginx. You have to provide
-  #    a path that corresponds to a virtual location in your webserver 
+  #    a path that corresponds to a virtual location in your webserver
   #    configuration.
-  #  :entitystore => "radiant:cache/entity"
-  #    Sets the entity store type (preceding the colon) and storage 
+  #  :entitystore => "radiant:tmp/cache/entity"
+  #    Sets the entity store type (preceding the colon) and storage
   #   location (following the colon, relative to Rails.root).
   #    We recommend you use radiant: since this will enable manual expiration.
-  #  :metastore => "radiant:cache/meta"
+  #  :metastore => "radiant:tmp/cache/meta"
   #    Sets the meta store type and storage location.  We recommend you use
   #    radiant: since this will enable manual expiration and acceleration headers.
   config.middleware.use ::Radiant::Cache
@@ -59,7 +59,7 @@ Radiant::Initializer.run do |config|
   config.active_record.observers = [:user_action_observer, :gallery_observer]
 
   # Make Active Record use UTC-base instead of local time
-  config.active_record.default_timezone = :utc
+  config.time_zone = 'UTC'
 
   # Set the default field error proc
   config.action_view.field_error_proc = Proc.new do |html, instance|
