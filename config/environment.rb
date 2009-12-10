@@ -69,18 +69,6 @@ Radiant::Initializer.run do |config|
       html
     end
   end
-
-  config.gem 'unicode'
-  config.gem 'capistrano'
-  config.gem 'newrelic_rpm'
-  config.gem 'sanitize'
-  config.gem 'fastercsv'
-  config.gem 'capistrano-ext',			:lib => false
-  config.gem 'mime-types',			:lib => false
-  config.gem 'morhekil-capistrano-deepmodules', :lib => false
-  config.gem 'imagesize',                       :lib => 'image_size'
-  config.gem 'mislav-will_paginate',            :lib => 'will_paginate', :source => 'http://gems.github.com'
-  config.gem 'contrast-exceptional',            :lib => 'exceptional',   :source => 'http://gems.github.com'
   
   config.after_initialize do
     # Add new inflection rules using the following format:
