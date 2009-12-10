@@ -1,0 +1,2 @@
+mysql:
+  mysql-config: /opt/local/lib/mysql5/bin/mysql_config
