@@ -43,9 +43,6 @@
 [submodule "vendor/extensions/copy_move"]
 	path = vendor/extensions/copy_move
 	url = git://github.com/pilu/radiant-copy-move.git
-[submodule "vendor/extensions/gallery"]
-	path = vendor/extensions/gallery
-	url = git://github.com/pilu/radiant-gallery.git
 [submodule "vendor/extensions/help"]
 	path = vendor/extensions/help
 	url = git://github.com/saturnflyer/radiant-help-extension.git
