@@ -25,4 +25,5 @@ except :production do
   gem 'capistrano'
   gem 'capistrano-ext'
   gem 'morhekil-capistrano-deepmodules'
+  gem 'rake'
 end

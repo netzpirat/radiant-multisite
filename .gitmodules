@@ -94,3 +94,6 @@
 [submodule "vendor/extensions/paperclipped_multi_site"]
 	path = vendor/extensions/paperclipped_multi_site
 	url = git://github.com/kbingman/radiant-paperclipped_multisite-extension.git
+[submodule "vendor/extensions/gallery"]
+	path = vendor/extensions/gallery
+	url = git://github.com/hairballopolis/radiant-gallery.git
