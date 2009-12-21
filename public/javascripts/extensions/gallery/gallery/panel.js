@@ -61,7 +61,7 @@ Gallery.Panel = Class.create({
     if (confirm('Do you want to delete selected file?')) {
       new Ajax.Request(link.getAttribute('href'), {
         method: 'delete',
-        parameters: { authenticity_token: encodeURIComponent(this.authenticity_token) },
+        parameters: { authenticity_token: this.authenticity_token },
         onLoading: function(request) { item.remove(); }
       });
     }
@@ -96,7 +96,7 @@ Gallery.Panel = Class.create({
 		  method: 'put',
 			parameters: {
 				id: id, old_position: old_position, new_position: new_position,
-				authenticity_token: encodeURIComponent(this.authenticity_token)
+				authenticity_token: this.authenticity_tokens
 			}
 		});
 	}

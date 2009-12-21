@@ -97,3 +97,9 @@
 [submodule "vendor/extensions/gallery"]
 	path = vendor/extensions/gallery
 	url = git://github.com/hairballopolis/radiant-gallery.git
+[submodule "vendor/extensions/drag_order"]
+	path = vendor/extensions/drag_order
+	url = git://github.com/spanner/radiant-drag-order.git
+[submodule "vendor/extensions/submenu"]
+	path = vendor/extensions/submenu
+	url = git://github.com/spanner/radiant-submenu-extension.git
