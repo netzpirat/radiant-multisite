@@ -44,7 +44,7 @@ Single site extensions:
 * [sns](http://github.com/radiant/radiant-sns-extension/)
 * [sns_minifier](http://github.com/SwankInnovations/radiant-sns-minifier-extension/)
 * [sns_sass_filter](http://github.com/SwankInnovations/radiant-sns-sass-filter-extension/)
-* |submenu](http://github.com/spanner/radiant-submenu-extension)
+* [submenu](http://github.com/spanner/radiant-submenu-extension)
 * [tags](http://github.com/jomz/radiant-tags-extension/)
 * [wym_editor_filter](http://github.com/jomz/radiant-wym-editor-filter-extension/)
 
