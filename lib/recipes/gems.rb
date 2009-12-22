@@ -4,7 +4,7 @@ namespace :deploy do
   namespace :gems do
     desc "Unpack bundled gems"
     task :unpack do
-      run "cd #{current_path} && gem bundle"
+      run "cd #{current_path} && ./script/gems"
     end
   end
 
