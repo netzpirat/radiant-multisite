@@ -15,6 +15,8 @@ gem 'sanitize'
 gem 'fastercsv'
 gem 'will_paginate'
 gem 'exceptional'
+gem 'rmagick'
+gem 'json_pure'
 
 except :production do
   gem 'mongrel'
