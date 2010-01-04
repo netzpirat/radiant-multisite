@@ -42,7 +42,7 @@ Single site extensions:
 * [seo_help](http://github.com/saturnflyer/radiant-seo_help-extension/)
 * [settings](http://github.com/Squeegy/radiant-settings/)
 * [sibling_tags](http://github.com/nelstrom/radiant-sibling-tags-extension/)
-* [sns](http://github.com/radiant/radiant-sns-extension/)
+* [sns](http://github.com/SwankInnovations/radiant-sns-extension/)
 * [sns_minifier](http://github.com/SwankInnovations/radiant-sns-minifier-extension/)
 * [sns_sass_filter](http://github.com/SwankInnovations/radiant-sns-sass-filter-extension/)
 * [submenu](http://github.com/spanner/radiant-submenu-extension)
