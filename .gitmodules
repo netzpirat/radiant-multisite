@@ -79,9 +79,6 @@
 [submodule "vendor/extensions/wym_editor_filter"]
 	path = vendor/extensions/wym_editor_filter
 	url = git://github.com/jomz/radiant-wym-editor-filter-extension.git
-[submodule "vendor/extensions/sns"]
-	path = vendor/extensions/sns
-	url = git://github.com/radiant/radiant-sns-extension.git
 [submodule "vendor/extensions/sns_minifier"]
 	path = vendor/extensions/sns_minifier
 	url = git://github.com/SwankInnovations/radiant-sns-minifier-extension.git
@@ -106,3 +103,6 @@
 [submodule "vendor/extensions/haml_filter"]
 	path = vendor/extensions/haml_filter
 	url = git://github.com/saturnflyer/radiant-haml_filter-extension.git
+[submodule "vendor/extensions/sns"]
+	path = vendor/extensions/sns
+	url = git://github.com/SwankInnovations/radiant-sns-extension.git
