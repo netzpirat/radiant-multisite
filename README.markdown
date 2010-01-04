@@ -30,6 +30,7 @@ Single site extensions:
 * [dav](http://github.com/netzpirat/radiant-dav-extension)
 * [gallery](http://github.com/hairballopolis/radiant-gallery/)
 * [drag_order](http://github.com/spanner/radiant-drag-order)
+* [haml filter](http://github.com/saturnflyer/radiant-haml_filter-extension/)
 * [help](http://github.com/saturnflyer/radiant-help-extension/)
 * [index_page](http://github.com/jomz/radiant-index-page-extension/)
 * [language_redirect](http://github.com/intinig/radiant_language_redirect_extension/)

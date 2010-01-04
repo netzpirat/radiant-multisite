@@ -103,3 +103,6 @@
 [submodule "vendor/extensions/submenu"]
 	path = vendor/extensions/submenu
 	url = git://github.com/spanner/radiant-submenu-extension.git
+[submodule "vendor/extensions/haml_filter"]
+	path = vendor/extensions/haml_filter
+	url = git://github.com/saturnflyer/radiant-haml_filter-extension.git
