@@ -1,7 +1,8 @@
 source :rubygems
 
 gem 'radiant', '0.8.1'
-gem 'mysql'
+gem 'rack', '1.0.0'
+gem 'mysql2'
 gem 'unicode'
 gem 'mime-types'
 gem 'imagesize'
@@ -12,6 +13,7 @@ gem 'will_paginate'
 gem 'exceptional'
 gem 'rmagick'
 gem 'json_pure'
+gem 'RedCloth'
 
 group :development do
   gem 'mongrel'
