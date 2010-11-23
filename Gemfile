@@ -1,9 +1,4 @@
-clear_sources
-disable_system_gems
-source 'http://gemcutter.org'
-source 'http://gems.github.com'
-
-bundle_path 'gems'
+source :rubygems
 
 gem 'radiant', '0.8.1'
 gem 'mysql'
@@ -18,7 +13,7 @@ gem 'exceptional'
 gem 'rmagick'
 gem 'json_pure'
 
-except :production do
+group :development do
   gem 'mongrel'
   gem 'rack-bug'
   gem 'cucumber', '0.3.9'
@@ -26,6 +21,6 @@ except :production do
   gem 'webrat', '0.4.4'
   gem 'capistrano'
   gem 'capistrano-ext'
-  gem 'morhekil-capistrano-deepmodules'
+  gem 'capistrano-deepmodules'
   gem 'rake'
 end

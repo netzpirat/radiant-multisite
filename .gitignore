@@ -1,3 +1,4 @@
+.bundle
 .DS_Store
 .idea
 bin/*
@@ -7,10 +8,7 @@ config/exceptional.yml
 config/newrelic.yml
 doc/api
 doc/app
-gems/*
-!gems/cache/
 log/*.log
 mkmf.log
-nbproject
 text_asset_cache
 tmp/**/*
