@@ -5,6 +5,7 @@
 set :stages, %w(production)
 require 'capistrano/ext/multistage'
 require 'capistrano/deepmodules'
+require 'bundler/capistrano'
 
 # allocate a pty by default as some systems have problems without
 default_run_options[:pty] = true
