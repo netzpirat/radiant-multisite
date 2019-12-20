@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'radiant', '0.8.1'
-gem 'rack', '1.0.0'
+gem 'rack', '1.6.12'
 gem 'mysql2'
 gem 'unicode'
 gem 'mime-types'
